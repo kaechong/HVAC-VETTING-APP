@@ -1,0 +1,123 @@
+✖ regression: fail -> actually change Finding -> second round pass retains first snapshot (16.740748ms)
+✖ regression: actual source revision invalidates pass and can be QCed again without rewriting history (21.102721ms)
+✖ regression: historical decision reason tampering is rejected even if current Finding did not change (2.860774ms)
+✖ regression: persistent lineage rejects fourth round, cleared history and rehashed reset attempts (2.505774ms)
+✖ regression: overlong UTF-8 filename rejects before reserving a report version (329.434536ms)
+✔ regression: 18 Findings remain visible through openpyxl read_only including rows 21-23 (511.942013ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 1
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1272.005669
+
+✖ failing tests:
+
+test at test/qc-revision.test.mjs:28:1
+✖ regression: fail -> actually change Finding -> second round pass retains first snapshot (16.740748ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "STALE_QC_SNAPSHOT"
+      at TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:32:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: Error: STALE_QC_SNAPSHOT
+        at ensure (file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/common.mjs:7:25)
+        at validateInput (file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/contract.mjs:76:5)
+        at file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:32:27
+        at getActual (node:assert:611:5)
+        at strict.doesNotThrow (node:assert:779:32)
+        at TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:32:10)
+        at async Test.run (node:internal/test_runner/test:1389:7)
+        at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at test/qc-revision.test.mjs:39:1
+✖ regression: actual source revision invalidates pass and can be QCed again without rewriting history (21.102721ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "STALE_QC_SNAPSHOT"
+      at TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:44:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: Error: STALE_QC_SNAPSHOT
+        at ensure (file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/common.mjs:7:25)
+        at validateInput (file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/contract.mjs:76:5)
+        at file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:44:27
+        at getActual (node:assert:611:5)
+        at strict.doesNotThrow (node:assert:779:32)
+        at TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:44:10)
+        at async Test.run (node:internal/test_runner/test:1389:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:960:7),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }
+
+test at test/qc-revision.test.mjs:49:1
+✖ regression: historical decision reason tampering is rejected even if current Finding did not change (2.860774ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:51:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at test/qc-revision.test.mjs:54:1
+✖ regression: persistent lineage rejects fourth round, cleared history and rehashed reset attempts (2.505774ms)
+  Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/workspace/hvac-vetting-offline-20261007/development/offline/lib/qc-ledger.mjs' imported from /workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs
+      at finalizeResolution (node:internal/modules/esm/resolve:271:11)
+      at moduleResolve (node:internal/modules/esm/resolve:865:10)
+      at defaultResolve (node:internal/modules/esm/resolve:992:11)
+      at #cachedDefaultResolve (node:internal/modules/esm/loader:701:20)
+      at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:721:38)
+      at ModuleLoader.resolveSync (node:internal/modules/esm/loader:759:56)
+      at #resolve (node:internal/modules/esm/loader:683:17)
+      at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:603:35)
+      at node:internal/modules/esm/loader:632:32
+      at TracingChannel.tracePromise (node:diagnostics_channel:362:14)
+      at ModuleLoader.import (node:internal/modules/esm/loader:628:21)
+      at defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:225:31)
+      at importModuleDynamicallyCallback (node:internal/modules/esm/utils:267:12)
+      at TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:56:25)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    code: 'ERR_MODULE_NOT_FOUND',
+    url: 'file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/qc-ledger.mjs'
+  }
+
+test at test/qc-revision.test.mjs:72:1
+✖ regression: overlong UTF-8 filename rejects before reserving a report version (329.434536ms)
+  AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+  
+  Caught error:
+  
+  Error: ENAMETOOLONG: name too long, open '/workspace/hvac-vetting-offline-20261007/development/offline/test-output/revision-6FfHPx/store/reports/b4d34a514a8d8312d1d04948b00301ec84d045653561df8afb42791806287bce/1.0/中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中_20261007_v1.0.xlsx.4dbb4531-907c-4ed5-b2b1-7aeae7c85138.tmp'
+      at async TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:74:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENAMETOOLONG: name too long, open '/workspace/hvac-vetting-offline-20261007/development/offline/test-output/revision-6FfHPx/store/reports/b4d34a514a8d8312d1d04948b00301ec84d045653561df8afb42791806287bce/1.0/中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中_20261007_v1.0.xlsx.4dbb4531-907c-4ed5-b2b1-7aeae7c85138.tmp'
+        at async open (node:internal/fs/promises:697:25)
+        at async immutableBytes (file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/delivery.mjs:29:16)
+        at async deliverOffline (file:///workspace/hvac-vetting-offline-20261007/development/offline/lib/delivery.mjs:117:5)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (file:///workspace/hvac-vetting-offline-20261007/development/offline/test/qc-revision.test.mjs:74:3)
+        at async Test.run (node:internal/test_runner/test:1389:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:960:7),
+    operator: 'rejects',
+    diff: 'simple'
+  }

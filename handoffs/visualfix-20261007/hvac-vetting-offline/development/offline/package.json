@@ -1,0 +1,17 @@
+{
+  "name": "hvac-vetting-offline-delivery",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "samples": "node scripts/make-samples.mjs",
+    "deliver": "node cli.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.17.1",
+    "exceljs": "4.4.0",
+    "fflate": "0.8.3"
+  },
+  "engines": { "node": ">=22" }
+}

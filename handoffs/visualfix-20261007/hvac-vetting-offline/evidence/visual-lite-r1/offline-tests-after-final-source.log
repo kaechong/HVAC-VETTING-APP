@@ -1,0 +1,41 @@
+
+> hvac-vetting-offline-delivery@0.1.0 test
+> node --test test/*.test.mjs
+
+✔ normal: exact four columns, two mother sheets, literal Finding text, receipt and readback hash (2008.179336ms)
+✔ preservation: all OOXML parts except report cells/styles/unused sample strings are byte-identical (868.944723ms)
+✔ zero issues: no sample Finding; numbered reservation and all unreviewed coverage remain explicit (481.125285ms)
+✔ long Chinese and more than 15: one Finding per row, wrap, bounded height, no content truncation (455.901437ms)
+✔ drawing label uses drawing ID instead of file name (436.064278ms)
+✔ unknown source is quarantined even when synthetic QC says pass (444.421118ms)
+✔ unknown / pending / wrong-system rules, advice and scope mismatch cannot enter violation column (38.979864ms)
+✔ source byte change, wrong page and invented excerpt are rejected (12.423312ms)
+✔ formula injection and malicious cell strings stay exact literal strings, no formulas/hyperlinks (447.148079ms)
+✔ duplicate Finding IDs and unsupported controls reject the input before report allocation (14.727404ms)
+✔ QC is isolated, stale decisions fail, exactly three rounds stop and a fourth is forbidden (21.373379ms)
+✔ QC not run / unresolved before third round blocks delivery; pass after failed round can proceed (279.64504ms)
+✔ same event is idempotent; explicit reissue on same snapshot gets next version and retains history (557.604108ms)
+✔ same report event with changed payload rejects, preserving prior report and version (256.362112ms)
+✔ interruption at four persisted checkpoints resumes same version and prepared report hash (1829.243497ms)
+✔ tampered delivered report never receives a successful readback receipt or replacement (672.880233ms)
+✔ modified receipt is detected; missing effective index can be rebuilt from verified completed jobs (495.840539ms)
+✔ local serialization prevents duplicate concurrent allocation, without promising remote billing guarantees (515.145904ms)
+✔ source traversal and symlink cannot read outside approved synthetic source directory (30.212843ms)
+✔ wrong template hash and excessive wrapped height stop instead of changing template or silently clipping (317.479531ms)
+✔ regression: fail -> actually change Finding -> second round pass retains first snapshot (39.77691ms)
+✔ regression: actual source revision invalidates pass and can be QCed again without rewriting history (1171.941088ms)
+✔ regression: historical decision reason tampering is rejected even if current Finding did not change (8.853607ms)
+✔ regression: persistent lineage rejects fourth round, cleared history and rehashed reset attempts (276.653467ms)
+✔ regression: overlong UTF-8 filename rejects before reserving a report version (3.088206ms)
+✔ regression: 18 Findings remain visible through openpyxl read_only including rows 21-23 (811.510796ms)
+✔ persistent revision: real Finding correction retains two rounds and rejects clearing history in another store (703.07104ms)
+✔ persistent receipt: modifying saved historical bytes is detected (65.840389ms)
+✔ filename boundary: full 255-byte name publishes without truncating project name; 256 bytes rejects (391.147723ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10661.572112

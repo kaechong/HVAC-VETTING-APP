@@ -1,0 +1,124 @@
+{
+  "QCFIX_zip_and_tracked_files": "UNCHANGED",
+  "original_source_files": 115,
+  "original_repo": "CLEAN",
+  "representative_sample_changes": [
+    {
+      "case": "normal",
+      "changed_rows": [
+        {
+          "row": 6,
+          "before_height": 30.0,
+          "after_height": 37.0
+        },
+        {
+          "row": 7,
+          "before_height": 30.0,
+          "after_height": 37.0
+        }
+      ],
+      "all_OOXML_except_sheet2_row_height": "BYTE_IDENTICAL"
+    },
+    {
+      "case": "zero",
+      "changed_rows": [],
+      "all_OOXML_except_sheet2_row_height": "BYTE_IDENTICAL"
+    },
+    {
+      "case": "long-18",
+      "changed_rows": [
+        {
+          "row": 6,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 7,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 8,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 9,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 10,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 11,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 12,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 13,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 14,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 15,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 16,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 17,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 18,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 19,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 20,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 21,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 22,
+          "before_height": 238.0,
+          "after_height": 301.0
+        },
+        {
+          "row": 23,
+          "before_height": 238.0,
+          "after_height": 301.0
+        }
+      ],
+      "all_OOXML_except_sheet2_row_height": "BYTE_IDENTICAL"
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+--- a/offline/lib/contract.mjs
++++ b/offline/lib/contract.mjs
+@@ -13,16 +13,16 @@
+ const unique = (items, key, code) => {
+   const keys = items.map(x => x[key]); ensure(keys.every(id) && new Set(keys).size === keys.length, code);
+ };
+-const fingerprint = input => ({
++export const reviewSnapshot = input => ({
+   owner_id: input.owner_id, review_id: input.review_id,
+   project: input.project, snapshot: input.snapshot, findings: input.findings,
+   evidence: input.evidence, rules: input.rules, coverage: input.coverage
+ });
+-export const snapshotDigest = input => digest(fingerprint(input));
++export const snapshotDigest = input => digest(reviewSnapshot(input));
+ export const findingDigest = finding => digest(finding);
+ export const inputManifestDigest = evidence => digest(evidence.map(e => ({file_id: e.file_id, sha256: e.sha256, revision: e.revision})).sort((a,b) => a.file_id.localeCompare(b.file_id) || a.sha256.localeCompare(b.sha256)));
+ 
+-export function validateInput(input) {
++function validateReviewData(input) {
+   ensure(input && typeof input === 'object' && !Array.isArray(input), 'INVALID_INPUT');
+   ensure(input.kind === 'synthetic-offline' && input.schema_version === '0.1', 'OFFLINE_SYNTHETIC_ONLY');
+   ensure(id(input.owner_id) && id(input.review_id) && id(input.report_event_id), 'INVALID_ID');
+@@ -68,19 +68,40 @@
+     for (const k of ['edition', 'citation', 'original_text', 'effective_context', 'transition', 'usage', 'trigger', 'source_url']) requireText(r[k], 'INCOMPLETE_RULE_PROVENANCE');
+     ensure(['synthetic_verified', 'pending', 'blocked'].includes(r.status), 'INVALID_RULE_STATUS');
+   }
++  return input;
++}
++
++export function sealQcRound(input, result, context_id) {
++  const q = {round: input.qc.rounds.length + 1, context_id,
++    snapshot: structuredClone(reviewSnapshot(input)), snapshot_sha256: snapshotDigest(input),
++    previous_receipt_sha256: input.qc.rounds.at(-1)?.receipt_sha256 ?? '0'.repeat(64),
++    decisions: input.findings.map(f => ({finding_id:f.finding_id, finding_sha256:findingDigest(f), result,
++      reason:'合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核'}))};
++  return {...q, receipt_sha256:digest(q)};
++}
++
++export function validateInput(input) {
++  validateReviewData(input);
+   ensure(input.qc && Array.isArray(input.qc.rounds) && input.qc.rounds.length <= 3, 'QC_THREE_ROUND_LIMIT');
+   const contexts = new Set();
+   for (const [i, q] of input.qc.rounds.entries()) {
+-    ensure(q.round === i + 1 && id(q.context_id) && q.context_id !== input.snapshot.main_context_id && !contexts.has(q.context_id), 'QC_CONTEXT_NOT_ISOLATED');
++    const {receipt_sha256, ...body} = q;
++    ensure(hash(receipt_sha256) && receipt_sha256 === digest(body), 'QC_RECEIPT_TAMPERED');
++    ensure(q.previous_receipt_sha256 === (i ? input.qc.rounds[i-1].receipt_sha256 : '0'.repeat(64)), 'QC_RECEIPT_CHAIN');
++    ensure(q.snapshot && q.snapshot_sha256 === digest(q.snapshot), 'QC_SNAPSHOT_TAMPERED');
++    // Validate each round against its own immutable review data, never the latest Finding.
++    validateReviewData({...q.snapshot, kind:input.kind, schema_version:input.schema_version, report_event_id:input.report_event_id});
++    ensure(q.snapshot.owner_id === input.owner_id && q.snapshot.review_id === input.review_id && q.snapshot.project.id === input.project.id, 'QC_LINEAGE_MISMATCH');
++    ensure(q.round === i + 1 && id(q.context_id) && q.context_id !== q.snapshot.snapshot.main_context_id && !contexts.has(q.context_id), 'QC_CONTEXT_NOT_ISOLATED');
+     contexts.add(q.context_id);
+-    ensure(q.snapshot_sha256 === snapshotDigest(input), 'STALE_QC_SNAPSHOT');
+-    ensure(Array.isArray(q.decisions) && q.decisions.length === input.findings.length, 'INCOMPLETE_QC_DECISIONS');
++    ensure(Array.isArray(q.decisions) && q.decisions.length === q.snapshot.findings.length, 'INCOMPLETE_QC_DECISIONS');
+     unique(q.decisions, 'finding_id', 'DUPLICATE_QC_ID');
+     for (const d of q.decisions) {
+-      const f = input.findings.find(x => x.finding_id === d.finding_id);
+-      ensure(f && d.finding_sha256 === findingDigest(f) && ['pass', 'fail'].includes(d.result) && text(d.reason), 'INVALID_QC_DECISION');
++      const f = q.snapshot.findings.find(x => x.finding_id === d.finding_id);
++      ensure(f && d.finding_sha256 === findingDigest(f) && ['pass','fail'].includes(d.result) && text(d.reason), 'INVALID_QC_DECISION');
+     }
+-    if (i < input.qc.rounds.length - 1) ensure(q.decisions.some(d => d.result === 'fail'), 'QC_ALREADY_PASSED');
++    if (i && input.qc.rounds[i-1].decisions.every(d => d.result === 'pass'))
++      ensure(q.snapshot_sha256 !== input.qc.rounds[i-1].snapshot_sha256, 'QC_ALREADY_PASSED');
+   }
+   return input;
+ }
+@@ -105,12 +126,13 @@
+ 
+ export async function gateFindings(input, sourceRoot) {
+   validateInput(input);
+-  const last = input.qc.rounds.at(-1), accepted = [], quarantined = [];
++  const last = input.qc.rounds.at(-1), current = last?.snapshot_sha256 === snapshotDigest(input), accepted = [], quarantined = [];
+   for (const f of input.findings) {
+     const reasons = [], sources = [];
+     if (f.classification !== 'violation_candidate') reasons.push('NON_VIOLATION_APP_ONLY');
+     const decision = last?.decisions.find(d => d.finding_id === f.finding_id);
+-    if (!decision || decision.result !== 'pass') reasons.push(last?.round === 3 ? 'QC_STOPPED_AFTER_THREE' : 'QC_NOT_PASSED');
++    if (last && !current) reasons.push('QC_APPROVAL_STALE');
++    if (!current || !decision || decision.result !== 'pass') reasons.push(last?.round === 3 ? 'QC_STOPPED_AFTER_THREE' : 'QC_NOT_PASSED');
+     for (const evidenceId of f.evidence_ids) {
+       const e = input.evidence.find(x => x.evidence_id === evidenceId);
+       if (!e) { reasons.push('UNKNOWN_SOURCE:' + evidenceId); continue; }
+@@ -130,13 +152,15 @@
+     if (reasons.length) quarantined.push({finding_id: f.finding_id, reasons: [...new Set(reasons)]});
+     else accepted.push({finding_id: f.finding_id, number: accepted.length + 1, document: primary.kind === 'drawing' ? primary.drawing_id : primary.filename + ' p.' + primary.page, problem: f.description, citation: f.code_citation});
+   }
+-  const qcState = !last ? 'not_run' : last.decisions.every(d => d.result === 'pass') ? 'passed_synthetic' : last.round === 3 ? 'stopped_after_three' : 'needs_revision';
++  const qcState = !last ? 'not_run' : !current ? (last.round === 3 ? 'stopped_after_three' : 'approval_stale') : last.decisions.every(d => d.result === 'pass') ? 'passed_synthetic' : last.round === 3 ? 'stopped_after_three' : 'needs_revision';
+   return {accepted, quarantined, qc: {rounds_used: input.qc.rounds.length, state: qcState}, coverage: input.coverage,
+     snapshot_sha256: snapshotDigest(input), limitations: ['SYNTHETIC_ONLY', 'NOT_ENGINEERING_ACCEPTANCE', 'ZERO_FINDINGS_IS_NOT_COMPLIANCE', 'FULL_SUBCONDITION_MAPPING_PENDING']};
+ }
+ 
+ export function appendQcRound(input, round) {
+   validateInput(input); ensure(input.qc.rounds.length < 3, 'QC_THREE_ROUND_LIMIT');
+-  ensure(!input.qc.rounds.at(-1)?.decisions.every(d => d.result === 'pass'), 'QC_ALREADY_PASSED');
++  const last = input.qc.rounds.at(-1);
++  ensure(!(last?.snapshot_sha256 === snapshotDigest(input) && last.decisions.every(d => d.result === 'pass')), 'QC_ALREADY_PASSED');
++  ensure(round.snapshot_sha256 === snapshotDigest(input), 'QC_ROUND_NOT_CURRENT');
+   const next = structuredClone(input); next.qc.rounds.push(round); validateInput(next); return next;
+ }
+--- a/offline/lib/delivery.mjs
++++ b/offline/lib/delivery.mjs
+@@ -1,8 +1,9 @@
+ import {readFile, mkdir, readdir, lstat, open, rename, unlink, link} from 'node:fs/promises';
+-import {resolve, join} from 'node:path';
++import {resolve, join, dirname} from 'node:path';
+ import {randomUUID} from 'node:crypto';
+ import {ensure, OfflineError, digest, sha256, TEMPLATE_SHA256} from './common.mjs';
+ import {gateFindings, validateInput} from './contract.mjs';
++import {syncQcHistory} from './qc-ledger.mjs';
+ import {renderMother} from './mother-renderer.mjs';
+ 
+ export const DEFAULT_TEMPLATE = new URL('../../../baseline/plan/templates/HVAC_VETTING_CHECKLIST_MOTHER_20261007.xlsx', import.meta.url);
+@@ -19,13 +20,13 @@
+   await mkdir(path, {recursive: true}); const stat = await lstat(path); ensure(stat.isDirectory() && !stat.isSymbolicLink(), 'UNSAFE_STORE_DIRECTORY');
+ }
+ async function atomicJson(path, value) {
+-  const temp = path + '.' + randomUUID() + '.tmp';
++  const temp = join(dirname(path), '.write-' + randomUUID() + '.tmp');
+   const file = await open(temp, 'wx');
+   try { await file.writeFile(JSON.stringify(value, null, 2) + '\n'); await file.sync(); } finally { await file.close(); }
+   await rename(temp, path);
+ }
+ async function immutableBytes(path, bytes) {
+-  const temp = path + '.' + randomUUID() + '.tmp';
++  const temp = join(dirname(path), '.write-' + randomUUID() + '.tmp');
+   const file = await open(temp, 'wx');
+   try { await file.writeFile(bytes); await file.sync(); } finally { await file.close(); }
+   try {
+@@ -68,11 +69,17 @@
+   return jobs;
+ }
+ 
++export function reportFilename(project, version) {
++  const filename = project.name + '_' + project.review_date.replaceAll('-', '') + '_v' + version + '.xlsx';
++  ensure(Buffer.byteLength(filename, 'utf8') <= 255, 'REPORT_FILENAME_TOO_LONG');
++  return filename;
++}
++
+ export async function deliverOffline({input, sourceRoot, storeRoot, failAt = null}) {
+   validateInput(input);
++  reportFilename(input.project, '1.0'); // Reject before any version reservation.
+   ensure([null, 'after-reserved', 'after-prepared', 'after-copy', 'after-receipt'].includes(failAt), 'INVALID_FAILPOINT');
+   const gate = await gateFindings(input, sourceRoot);
+-  ensure(['passed_synthetic', 'stopped_after_three'].includes(gate.qc.state), 'QC_NOT_READY');
+   const templateBytes = await readFile(DEFAULT_TEMPLATE);
+   ensure(sha256(templateBytes) === TEMPLATE_SHA256, 'MOTHER_HASH_MISMATCH');
+   const root = resolve(storeRoot); await folder(root); await folder(join(root, 'jobs')); await folder(join(root, 'reports'));
+@@ -82,6 +89,10 @@
+   try {
+     await lock.writeFile(JSON.stringify({pid: process.pid, operation: 'offline-delivery'})); await lock.sync();
+     const jobs = await loadJobs(root);
++    const existing = jobs.find(j=>j.job_id===digest({owner_id:input.owner_id,project_id:input.project.id,report_event_id:input.report_event_id}));
++    if(existing) ensure(existing.payload_sha256===digest(input),'REPORT_EVENT_CONFLICT');
++    await syncQcHistory(input);
++    ensure(['passed_synthetic', 'stopped_after_three'].includes(gate.qc.state), 'QC_NOT_READY');
+     const jobId = digest({owner_id: input.owner_id, project_id: input.project.id, report_event_id: input.report_event_id});
+     const payloadHash = digest(input), gateHash = digest(gate);
+     let job = jobs.find(j => j.job_id === jobId);
+@@ -91,7 +102,7 @@
+     } else {
+       const prior = jobs.filter(j => j.owner_id === input.owner_id && j.project_id === input.project.id);
+       const version = String(Math.max(0, ...prior.map(j => Number.parseInt(j.version))) + 1) + '.0';
+-      const filename = input.project.name + '_' + input.project.review_date.replaceAll('-', '') + '_v' + version + '.xlsx';
++      const filename = reportFilename(input.project, version);
+       job = {schema_version: '0.1', job_id: jobId, owner_id: input.owner_id, project_id: input.project.id, review_id: input.review_id, report_event_id: input.report_event_id,
+         payload_sha256: payloadHash, gate_sha256: gateHash, version, filename, status: 'reserved',
+         delivered_path: join('reports', digest({owner_id: input.owner_id, project_id: input.project.id}), version, filename)};
+--- /dev/null
++++ b/offline/lib/qc-ledger.mjs
+@@ -0,0 +1,51 @@
++import {mkdir, readdir, readFile, lstat, open, link, unlink} from 'node:fs/promises';
++import {join, resolve} from 'node:path';
++import {randomUUID} from 'node:crypto';
++import {digest, ensure, OfflineError} from './common.mjs';
++import {validateInput, appendQcRound} from './contract.mjs';
++
++// Independent of the chosen delivery store: changing --store cannot reset QC.
++export const DEFAULT_QC_ROOT = new URL('../state/qc-lineages/', import.meta.url).pathname;
++async function folder(path) {
++  await mkdir(path,{recursive:true}); const s=await lstat(path);
++  ensure(s.isDirectory() && !s.isSymbolicLink(),'UNSAFE_QC_LEDGER');
++}
++async function locked(input, ledgerRoot, operation) {
++  const root=resolve(ledgerRoot), key=digest({owner_id:input.owner_id,project_id:input.project.id,review_id:input.review_id});
++  await folder(root); const dir=join(root,key); await folder(dir);
++  const lockPath=join(dir,'.lock'); let lock;
++  try {lock=await open(lockPath,'wx');} catch(e) {if(e.code==='EEXIST')throw new OfflineError('QC_LEDGER_BUSY');throw e;}
++  try {
++    await lock.writeFile(JSON.stringify({pid:process.pid,lineage:key}));await lock.sync();
++    const names=(await readdir(dir)).filter(n=>n!=='.lock');
++    ensure(names.every(n=>/^round-[1-3]-[a-f0-9]{64}\.json$/.test(n)), 'QC_LEDGER_UNEXPECTED_ENTRY');
++    names.sort();const stored=[];
++    for(const name of names) {
++      const path=join(dir,name),s=await lstat(path);
++      ensure(s.isFile()&&!s.isSymbolicLink()&&s.size<=8388608,'UNSAFE_QC_LEDGER');
++      let q;try {q=JSON.parse(await readFile(path,'utf8'));} catch {throw new OfflineError('QC_LEDGER_CORRUPT');}
++      ensure(name===`round-${stored.length+1}-${q.receipt_sha256}.json`,'QC_LEDGER_CORRUPT');stored.push(q);
++    }
++    validateInput({...input,qc:{rounds:stored}});
++    ensure(input.qc.rounds.length>=stored.length,'QC_HISTORY_RESET');
++    stored.forEach((q,i)=>ensure(digest(q)===digest(input.qc.rounds[i]),'QC_HISTORY_REWRITE'));
++    validateInput(input);
++    async function save(q) {
++      const temp=join(dir,'.write-'+randomUUID()+'.tmp');const f=await open(temp,'wx');
++      try {await f.writeFile(JSON.stringify(q,null,2)+'\n');await f.sync();}finally{await f.close();}
++      try {await link(temp,join(dir,`round-${q.round}-${q.receipt_sha256}.json`));}finally{await unlink(temp);}
++      stored.push(q);
++    }
++    // Explicit synthetic history import is allowed once; persisted prefixes are authoritative thereafter.
++    for(const q of input.qc.rounds.slice(stored.length))await save(q);
++    return await operation(save);
++  } finally {await lock.close();await unlink(lockPath);}
++}
++export async function syncQcHistory(input, ledgerRoot=DEFAULT_QC_ROOT) {
++  return locked(input,ledgerRoot,async()=>input);
++}
++export async function recordQcRound({input,round,ledgerRoot=DEFAULT_QC_ROOT}) {
++  return locked(input,ledgerRoot,async save=>{
++    const next=appendQcRound(input,round);await save(next.qc.rounds.at(-1));return next;
++  });
++}
+--- a/offline/scripts/make-samples.mjs
++++ b/offline/scripts/make-samples.mjs
+@@ -2,8 +2,10 @@
+ import {join} from 'node:path';
+ import {makeFixture, signSyntheticQc} from '../test/fixture.mjs';
+ import {main} from '../cli.mjs';
++import {sealQcRound} from '../lib/contract.mjs';
++import {recordQcRound} from '../lib/qc-ledger.mjs';
+ 
+-const root = new URL('../../../samples/final-r1/', import.meta.url).pathname;
++const root = new URL('../../../samples/final-r2/', import.meta.url).pathname;
+ await mkdir(root, {recursive: true});
+ const cases = [
+   {id:'normal', options:{count:2,name:'SYNTHETIC_正常四欄'}},
+@@ -12,6 +14,7 @@
+   {id:'unknown-source', options:{count:2,name:'SYNTHETIC_未知來源隔離'}},
+   {id:'malicious-text', options:{count:2,drawing:true,name:'SYNTHETIC_惡意字串文字化'}},
+   {id:'qc-three-stop', options:{count:1,name:'SYNTHETIC_QC三輪停止'}},
++  {id:'qc-real-revision', options:{count:1,name:'SYNTHETIC_QC實際修正'}},
+   {id:'recovery', options:{count:2,name:'SYNTHETIC_中斷恢復'}}
+ ];
+ const manifest = [];
+@@ -21,6 +24,7 @@
+   if(c.id==='unknown-source'){input.findings[0].evidence_ids=['MISSING-EVIDENCE'];input.findings[0].primary_evidence_id='MISSING-EVIDENCE';signSyntheticQc(input);}
+   if(c.id==='malicious-text'){input.evidence[0].drawing_id='=1+1';input.findings[0].description='=HYPERLINK("https://attacker.invalid","合成惡意文字")；';input.findings[1].description='</c><f>SUM(1,2)</f><c>\n@SUM(A1:A2)；';signSyntheticQc(input);}
+   if(c.id==='qc-three-stop')signSyntheticQc(input,['fail','fail','fail']);
++  if(c.id==='qc-real-revision'){try{Object.assign(input,JSON.parse(await readFile(inputPath,'utf8')));}catch(e){if(e.code!=='ENOENT')throw e;input.qc.rounds=[];let revised=await recordQcRound({input,round:sealQcRound(input,'fail','SYNTHETIC-QC-1')});revised.findings[0].description='真正修正後的離線合成內容；';revised=await recordQcRound({input:revised,round:sealQcRound(revised,'pass','SYNTHETIC-QC-2')});Object.assign(input,revised);}}
+   await writeFile(inputPath,JSON.stringify(input,null,2)+'\n');
+   const args=['--input',inputPath,'--sources',sources,'--store',store];
+   if(c.id==='recovery'){
+--- a/offline/scripts/package-handoff.py
++++ b/offline/scripts/package-handoff.py
+@@ -6,7 +6,7 @@
+ 
+ ROOT = Path(__file__).resolve().parents[3]
+ files = [ROOT / 'OFFLINE_HANDOFF.md']
+-for base in [ROOT / 'baseline', ROOT / 'development', ROOT / 'evidence', ROOT / 'samples/final-r1']:
++for base in [ROOT / 'baseline', ROOT / 'development', ROOT / 'evidence', ROOT / 'samples/final-r1', ROOT / 'samples/final-r2']:
+     for path in sorted(base.rglob('*')):
+         if not path.is_file() or path.is_symlink():
+             continue
+@@ -18,7 +18,7 @@
+ manifest = ''.join(hashlib.sha256(p.read_bytes()).hexdigest() + '  ' + p.relative_to(ROOT).as_posix() + '\n' for p in files)
+ (ROOT / 'evidence/FILES.sha256').write_text(manifest)
+ files.append(ROOT / 'evidence/FILES.sha256')
+-archive = ROOT / 'HVAC_VETTING_OFFLINE_HANDOFF_20261007.zip'
++archive = ROOT / 'HVAC_VETTING_OFFLINE_HANDOFF_20261007_QCFIX.zip'
+ with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+     for path in files:
+         info = zipfile.ZipInfo('hvac-vetting-offline/' + path.relative_to(ROOT).as_posix(), (2026,10,7,0,0,0))
+--- a/offline/scripts/verify-artifacts.py
++++ b/offline/scripts/verify-artifacts.py
+@@ -14,7 +14,7 @@
+ with zipfile.ZipFile(MOTHER) as z:
+     original_parts = {p: z.read(p) for p in z.namelist()}
+ original = openpyxl.load_workbook(MOTHER)
+-manifest = json.loads((ROOT / 'samples/final-r1/SAMPLE_MANIFEST.json').read_text())
++manifest = json.loads((ROOT / 'samples/final-r2/SAMPLE_MANIFEST.json').read_text())
+ results = []
+ for sample in manifest['samples']:
+     deliveries = [sample] + ([sample['reissue']] if sample.get('reissue') else [])
+@@ -67,5 +67,9 @@
+         assert receipt['provisional']['formal_acceptance'] is False
+         assert receipt['drive_receipt'] is None
+         assert len(receipt['coverage']) == 24 and all(c['state']=='not_reviewed' for c in receipt['coverage'])
++        if sample['case']=='long-18':
++            streamed=openpyxl.load_workbook(path,read_only=True)['工作表1']
++            rows=list(streamed.iter_rows(values_only=True))
++            assert len(rows)==23 and [r[0] for r in rows[20:23]]==[16,17,18]
+         results.append({'case':sample['case'],'version':receipt['version'],'status':'PASS_OFFLINE_READBACK','report_sha256':sha(data),'findings':count,'qc':receipt['qc'],'changed_parts':changed})
+ print(json.dumps({'reader':'openpyxl '+openpyxl.__version__, 'scope':'synthetic workbook structure/content/hash; not visual or engineering acceptance', 'results':results},ensure_ascii=False,indent=2))
+--- a/offline/test/fixture.mjs
++++ b/offline/test/fixture.mjs
+@@ -1,12 +1,12 @@
+ import {mkdir, writeFile} from 'node:fs/promises';
+-import {join} from 'node:path';
++import {join,basename,dirname} from 'node:path';
+ import {sha256, WORKFLOW_VERSION} from '../lib/common.mjs';
+-import {snapshotDigest, findingDigest, inputManifestDigest} from '../lib/contract.mjs';
++import {snapshotDigest, findingDigest, inputManifestDigest, sealQcRound} from '../lib/contract.mjs';
+ 
+ export function signSyntheticQc(input, results = ['pass']) {
+   input.snapshot.input_sha256 = inputManifestDigest(input.evidence);
+-  input.qc = {rounds: results.map((result, i) => ({round: i + 1, context_id: 'SYNTHETIC-QC-' + (i + 1), snapshot_sha256: snapshotDigest(input),
+-    decisions: input.findings.map(f => ({finding_id: f.finding_id, finding_sha256: findingDigest(f), result, reason: '合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核'}))}))};
++  input.qc = {rounds:[]};
++  for (const [i,result] of results.entries()) input.qc.rounds.push(sealQcRound(input,result,'SYNTHETIC-QC-'+(i+1)));
+   return input;
+ }
+ export async function makeFixture(root, {count = 2, drawing = false, name = '合成離線驗收專案', long = false} = {}) {
+@@ -14,7 +14,7 @@
+   const excerpt = 'SYNTHETIC observation: value 12 differs from synthetic required value 10.';
+   const bytes = Buffer.from('[page:1]\n' + excerpt + '\nNot a real engineering document.\n');
+   await writeFile(join(root, 'SYNTHETIC-source.txt'), bytes);
+-  const input = {schema_version: '0.1', kind: 'synthetic-offline', owner_id: 'SYNTHETIC-OWNER', review_id: 'SYNTHETIC-REVIEW-1', report_event_id: 'SYNTHETIC-EXPORT-1',
++  const input = {schema_version: '0.1', kind: 'synthetic-offline', owner_id: 'SYNTHETIC-OWNER', review_id: 'SYNTHETIC-REVIEW-' + sha256(basename(dirname(root))+'|'+name).slice(0,16), report_event_id: 'SYNTHETIC-EXPORT-1',
+     project: {id: 'SYNTHETIC-PROJECT', name, mode: 'DUAL', review_date: '2026-10-07'},
+     snapshot: {workflow_version: WORKFLOW_VERSION, rules_version: 'SYNTHETIC-RULES-1', input_sha256: '0'.repeat(64), main_context_id: 'SYNTHETIC-MAIN'},
+     evidence: [{evidence_id: 'E-1', file_id: 'SYNTHETIC-FILE-1', filename: 'SYNTHETIC-source.txt', relative_path: 'SYNTHETIC-source.txt', sha256: sha256(bytes), revision: 'SYNTHETIC-R1',
+--- a/offline/test/offline.test.mjs
++++ b/offline/test/offline.test.mjs
+@@ -5,7 +5,7 @@
+ import ExcelJS from 'exceljs';
+ import {unzipSync, strFromU8} from 'fflate';
+ import {makeFixture, signSyntheticQc} from './fixture.mjs';
+-import {validateInput, gateFindings, snapshotDigest, findingDigest, appendQcRound} from '../lib/contract.mjs';
++import {validateInput, gateFindings, snapshotDigest, findingDigest, appendQcRound, sealQcRound} from '../lib/contract.mjs';
+ import {deliverOffline, DEFAULT_TEMPLATE} from '../lib/delivery.mjs';
+ import {renderMother} from '../lib/mother-renderer.mjs';
+ import {HEADERS, sha256, digest} from '../lib/common.mjs';
+@@ -126,14 +126,14 @@
+   const fourth={...s.input.qc.rounds[2],round:4,context_id:'SYNTHETIC-QC-4'};
+   assert.throws(()=>appendQcRound(s.input,fourth),e=>e.code==='QC_THREE_ROUND_LIMIT');
+   const invalid=structuredClone(s.input);invalid.qc.rounds.push(fourth);assert.throws(()=>validateInput(invalid),e=>e.code==='QC_THREE_ROUND_LIMIT');
+-  signSyntheticQc(s.input);s.input.qc.rounds[0].context_id=s.input.snapshot.main_context_id;assert.throws(()=>validateInput(s.input),e=>e.code==='QC_CONTEXT_NOT_ISOLATED');
+-  signSyntheticQc(s.input);s.input.findings[0].description='changed after QC；';assert.throws(()=>validateInput(s.input),e=>e.code==='STALE_QC_SNAPSHOT');
++  signSyntheticQc(s.input);s.input.qc.rounds[0].context_id=s.input.snapshot.main_context_id;{const {receipt_sha256,...body}=s.input.qc.rounds[0];s.input.qc.rounds[0].receipt_sha256=digest(body);}assert.throws(()=>validateInput(s.input),e=>e.code==='QC_CONTEXT_NOT_ISOLATED');
++  signSyntheticQc(s.input);s.input.findings[0].description='changed after QC；';assert.doesNotThrow(()=>validateInput(s.input));assert.equal((await gateFindings(s.input,s.sources)).accepted.length,0);
+ });
+ 
+ test('QC not run / unresolved before third round blocks delivery; pass after failed round can proceed', async () => {
+   const s=await setup({count:1});s.input.qc.rounds=[];await rejectsCode(s.deliver,'QC_NOT_READY');
+   signSyntheticQc(s.input,['fail']);await rejectsCode(s.deliver,'QC_NOT_READY');
+-  const round={round:2,context_id:'SYNTHETIC-QC-2',snapshot_sha256:snapshotDigest(s.input),decisions:s.input.findings.map(f=>({finding_id:f.finding_id,finding_sha256:findingDigest(f),result:'pass',reason:'synthetic fixed'}))};
++  const round=sealQcRound(s.input,'pass','SYNTHETIC-QC-2');
+   s.input=appendQcRound(s.input,round);const result=await deliverOffline({input:s.input,sourceRoot:s.sources,storeRoot:s.store});assert.equal(result.accepted,1);assert.equal(result.qc.rounds_used,2);
+ });
+ 
+--- /dev/null
++++ b/offline/test/qc-revision.test.mjs
+@@ -0,0 +1,112 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {mkdir, mkdtemp, readFile, writeFile, readdir} from 'node:fs/promises';
++import {join} from 'node:path';
++import {execFileSync} from 'node:child_process';
++import {unzipSync, strFromU8} from 'fflate';
++import {makeFixture, signSyntheticQc} from './fixture.mjs';
++import {appendQcRound, validateInput, gateFindings, snapshotDigest, findingDigest, inputManifestDigest} from '../lib/contract.mjs';
++import {deliverOffline} from '../lib/delivery.mjs';
++import {digest, sha256} from '../lib/common.mjs';
++
++const out = new URL('../test-output/', import.meta.url).pathname;
++await mkdir(out, {recursive:true});
++async function setup(options={count:1}) {
++  const dir=await mkdtemp(join(out,'revision-')), sources=join(dir,'sources'), store=join(dir,'store');
++  const input=await makeFixture(sources,options);
++  return {dir,sources,store,input};
++}
++function roundFor(input,result,number=input.qc.rounds.length+1) {
++  const {owner_id,review_id,project,snapshot,findings,evidence,rules,coverage}=input;
++  const q={round:number,context_id:'REVISION-QC-'+number,snapshot:structuredClone({owner_id,review_id,project,snapshot,findings,evidence,rules,coverage}),
++    snapshot_sha256:snapshotDigest(input),previous_receipt_sha256:input.qc.rounds.at(-1)?.receipt_sha256??'0'.repeat(64),
++    decisions:findings.map(f=>({finding_id:f.finding_id,finding_sha256:findingDigest(f),result,reason:'Synthetic revision regression'}))};
++  return {...q,receipt_sha256:digest(q)};
++}
++const rejectsCode=(run,code)=>assert.rejects(run,e=>e.code===code);
++
++test('regression: fail -> actually change Finding -> second round pass retains first snapshot',async()=>{
++  const s=await setup();signSyntheticQc(s.input,['fail']);
++  const first=structuredClone(s.input.qc.rounds[0]);
++  s.input.findings[0].description='合成問題已實際修正，保留首輪歷史；';
++  assert.doesNotThrow(()=>validateInput(s.input));
++  const stale=await gateFindings(s.input,s.sources);assert.equal(stale.accepted.length,0);
++  const next=appendQcRound(s.input,roundFor(s.input,'pass'));
++  assert.deepEqual(next.qc.rounds[0],first);assert.notEqual(next.qc.rounds[0].snapshot_sha256,next.qc.rounds[1].snapshot_sha256);
++  const gate=await gateFindings(next,s.sources);assert.equal(gate.accepted.length,1);assert.equal(gate.qc.rounds_used,2);
++});
++
++test('regression: actual source revision invalidates pass and can be QCed again without rewriting history',async()=>{
++  const s=await setup();const {syncQcHistory}=await import('../lib/qc-ledger.mjs');await syncQcHistory(s.input);const first=structuredClone(s.input.qc.rounds[0]);
++  const bytes=Buffer.from('[page:1]\n'+s.input.evidence[0].excerpt+'\nSYNTHETIC revision 2\n');
++  await writeFile(join(s.sources,'SYNTHETIC-source.txt'),bytes);
++  s.input.evidence[0].sha256=sha256(bytes);s.input.evidence[0].revision='SYNTHETIC-R2';s.input.snapshot.input_sha256=inputManifestDigest(s.input.evidence);
++  assert.doesNotThrow(()=>validateInput(s.input));assert.equal((await gateFindings(s.input,s.sources)).accepted.length,0);
++  const {recordQcRound}=await import('../lib/qc-ledger.mjs');const next=await recordQcRound({input:s.input,round:roundFor(s.input,'pass')});
++  assert.deepEqual(next.qc.rounds[0],first);assert.equal((await gateFindings(next,s.sources)).accepted.length,1);
++});
++
++test('regression: historical decision reason tampering is rejected even if current Finding did not change',async()=>{
++  const s=await setup();s.input.qc.rounds[0].decisions[0].reason='tampered history';
++  assert.throws(()=>validateInput(s.input),e=>e.code==='QC_RECEIPT_TAMPERED');
++});
++
++test('regression: persistent lineage rejects fourth round, cleared history and rehashed reset attempts',async()=>{
++  const s=await setup();s.input.qc.rounds=[];
++  const {recordQcRound}=await import('../lib/qc-ledger.mjs');
++  const ledgerRoot=join(s.dir,'qc-ledger');let input=s.input;
++  for(let i=1;i<=3;i++){
++    input.findings[0].description='第'+i+'輪真正不同的合成修訂；';
++    input=await recordQcRound({input,round:roundFor(input,'fail'),ledgerRoot});
++  }
++  await rejectsCode(()=>recordQcRound({input,round:roundFor(input,'pass'),ledgerRoot}),'QC_THREE_ROUND_LIMIT');
++  const cleared=structuredClone(input);cleared.qc.rounds=[];
++  await rejectsCode(()=>recordQcRound({input:cleared,round:roundFor(cleared,'pass'),ledgerRoot}),'QC_HISTORY_RESET');
++  const reset=structuredClone(input);reset.qc.rounds=[roundFor({...input,qc:{rounds:[]}},'pass',1)];
++  await rejectsCode(()=>recordQcRound({input:reset,round:roundFor(reset,'pass'),ledgerRoot}),'QC_HISTORY_RESET');
++  const rewritten=structuredClone(input);rewritten.qc.rounds[0].decisions[0].reason='rehash attempt';
++  rewritten.qc.rounds.forEach((q,i)=>{q.previous_receipt_sha256=i?rewritten.qc.rounds[i-1].receipt_sha256:'0'.repeat(64);const {receipt_sha256,...body}=q;q.receipt_sha256=digest(body);});
++  await rejectsCode(()=>recordQcRound({input:rewritten,round:roundFor(rewritten,'pass'),ledgerRoot}),'QC_HISTORY_REWRITE');
++});
++
++test('regression: overlong UTF-8 filename rejects before reserving a report version',async()=>{
++  const s=await setup({count:1,name:'中'.repeat(100)});
++  await rejectsCode(()=>deliverOffline({input:s.input,sourceRoot:s.sources,storeRoot:s.store}),'REPORT_FILENAME_TOO_LONG');
++  let entries=[];try{entries=await readdir(join(s.store,'jobs'));}catch(e){if(e.code!=='ENOENT')throw e;}
++  assert.equal(entries.length,0);
++});
++
++test('regression: 18 Findings remain visible through openpyxl read_only including rows 21-23',async()=>{
++  const s=await setup({count:18}),result=await deliverOffline({input:s.input,sourceRoot:s.sources,storeRoot:s.store});
++  const xml=strFromU8(unzipSync(new Uint8Array(await readFile(result.report)))['xl/worksheets/sheet2.xml']);
++  const dimension=xml.match(/<dimension\b[^>]*\bref="([^"]+)"/)?.[1]??null;
++  const data=JSON.parse(execFileSync('python',['-B','-c',
++    'import openpyxl,json,sys;w=openpyxl.load_workbook(sys.argv[1],read_only=True);s=w["工作表1"];rows=list(s.iter_rows(values_only=True));print(json.dumps({"rows":len(rows),"last_numbers":[r[0] for r in rows[20:23]],"all_findings":len([r for r in rows[5:] if len(r)>2 and r[2]])}))',result.report],{encoding:'utf8'}));
++  assert.deepEqual(data,{rows:23,last_numbers:[16,17,18],all_findings:18});
++  assert.ok(dimension===null||dimension==='A1:D23','No stale dimension may truncate streamed reading');
++});
++
++test('persistent revision: real Finding correction retains two rounds and rejects clearing history in another store',async()=>{
++  const s=await setup(),{recordQcRound}=await import('../lib/qc-ledger.mjs');s.input.qc.rounds=[];
++  let input=await recordQcRound({input:s.input,round:roundFor(s.input,'fail')});
++  input.findings[0].description='真正修正後的合成 Finding；';
++  input=await recordQcRound({input,round:roundFor(input,'pass')});
++  const delivered=await deliverOffline({input,sourceRoot:s.sources,storeRoot:s.store});assert.equal(delivered.accepted,1);assert.equal(delivered.qc.rounds_used,2);
++  const reset=structuredClone(input);reset.qc.rounds=[];
++  await rejectsCode(()=>deliverOffline({input:reset,sourceRoot:s.sources,storeRoot:join(s.dir,'different-store')}),'QC_HISTORY_RESET');
++});
++
++test('persistent receipt: modifying saved historical bytes is detected',async()=>{
++  const s=await setup(),{recordQcRound}=await import('../lib/qc-ledger.mjs');s.input.qc.rounds=[];
++  const ledgerRoot=join(s.dir,'qc-ledger'),input=await recordQcRound({input:s.input,round:roundFor(s.input,'fail'),ledgerRoot});
++  const lineage=(await readdir(ledgerRoot))[0],dir=join(ledgerRoot,lineage),file=(await readdir(dir))[0],path=join(dir,file);
++  const q=JSON.parse(await readFile(path,'utf8'));q.decisions[0].reason='disk tamper';await writeFile(path,JSON.stringify(q));
++  await rejectsCode(()=>recordQcRound({input,round:roundFor(input,'pass'),ledgerRoot}),'QC_RECEIPT_TAMPERED');
++});
++
++test('filename boundary: full 255-byte name publishes without truncating project name; 256 bytes rejects',async()=>{
++  const s=await setup({name:'中'.repeat(78)+'AB'}),delivered=await deliverOffline({input:s.input,sourceRoot:s.sources,storeRoot:s.store});
++  const filename=delivered.report.split('/').at(-1);assert.equal(Buffer.byteLength(filename),255);
++  const {default:ExcelJS}=await import('exceljs');const w=new ExcelJS.Workbook();await w.xlsx.load(await readFile(delivered.report));assert.equal(w.getWorksheet('工作表1').getCell('A1').value,s.input.project.name);
++  const over=await setup({name:'中'.repeat(78)+'ABC'});await rejectsCode(()=>deliverOffline({input:over.input,sourceRoot:over.sources,storeRoot:over.store}),'REPORT_FILENAME_TOO_LONG');
++});

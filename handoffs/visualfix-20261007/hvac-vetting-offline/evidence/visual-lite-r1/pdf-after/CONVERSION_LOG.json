@@ -1,0 +1,70 @@
+[
+  {
+    "case": "mother",
+    "input_sha256": "e968805be7b0e57f94c2a3e391c495f25730c55b9800123b15a6bf8900d56efd",
+    "command": [
+      "soffice",
+      "-env:UserInstallation=file:///workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/lo-profile",
+      "--headless",
+      "--convert-to",
+      "pdf:calc_pdf_Export",
+      "--outdir",
+      "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/mother",
+      "/workspace/hvac-vetting-offline-20261007/baseline/plan/templates/HVAC_VETTING_CHECKLIST_MOTHER_20261007.xlsx"
+    ],
+    "returncode": 0,
+    "stdout": "convert /workspace/hvac-vetting-offline-20261007/baseline/plan/templates/HVAC_VETTING_CHECKLIST_MOTHER_20261007.xlsx as a Calc document -> /workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/mother/HVAC_VETTING_CHECKLIST_MOTHER_20261007.pdf using filter : calc_pdf_Export\n",
+    "stderr": ""
+  },
+  {
+    "case": "normal",
+    "input_sha256": "6151835582d3ec5abe714378e0490501d75cd2d5b3fd2c677b64eb056bcdc06f",
+    "command": [
+      "soffice",
+      "-env:UserInstallation=file:///workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/lo-profile",
+      "--headless",
+      "--convert-to",
+      "pdf:calc_pdf_Export",
+      "--outdir",
+      "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/normal",
+      "/workspace/hvac-vetting-offline-20261007/samples/final-r3/normal/report-v1.0.xlsx"
+    ],
+    "returncode": 0,
+    "stdout": "convert /workspace/hvac-vetting-offline-20261007/samples/final-r3/normal/report-v1.0.xlsx as a Calc document -> /workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/normal/report-v1.0.pdf using filter : calc_pdf_Export\n",
+    "stderr": ""
+  },
+  {
+    "case": "zero",
+    "input_sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c",
+    "command": [
+      "soffice",
+      "-env:UserInstallation=file:///workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/lo-profile",
+      "--headless",
+      "--convert-to",
+      "pdf:calc_pdf_Export",
+      "--outdir",
+      "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/zero",
+      "/workspace/hvac-vetting-offline-20261007/samples/final-r3/zero/report-v1.0.xlsx"
+    ],
+    "returncode": 0,
+    "stdout": "convert /workspace/hvac-vetting-offline-20261007/samples/final-r3/zero/report-v1.0.xlsx as a Calc document -> /workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/zero/report-v1.0.pdf using filter : calc_pdf_Export\n",
+    "stderr": ""
+  },
+  {
+    "case": "long-18",
+    "input_sha256": "418f63b53aa7f5dde17212dddb0c79c2d7140a7003b2617e4de4abde6cc49f2e",
+    "command": [
+      "soffice",
+      "-env:UserInstallation=file:///workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/lo-profile",
+      "--headless",
+      "--convert-to",
+      "pdf:calc_pdf_Export",
+      "--outdir",
+      "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/long-18",
+      "/workspace/hvac-vetting-offline-20261007/samples/final-r3/long-18/report-v1.0.xlsx"
+    ],
+    "returncode": 0,
+    "stdout": "convert /workspace/hvac-vetting-offline-20261007/samples/final-r3/long-18/report-v1.0.xlsx as a Calc document -> /workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/pdf-after/long-18/report-v1.0.pdf using filter : calc_pdf_Export\n",
+    "stderr": ""
+  }
+]

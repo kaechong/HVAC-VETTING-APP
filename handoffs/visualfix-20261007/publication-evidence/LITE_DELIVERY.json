@@ -1,0 +1,102 @@
+{
+  "status": "PASS_LOCAL_OFFLINE_HANDOFF",
+  "package": {
+    "archive": "/workspace/hvac-vetting-offline-20261007/HVAC_VETTING_OFFLINE_LITE_20261007_VISUALFIX.zip",
+    "bytes": 1431868,
+    "sha256": "736dc2f41691071c0e6cb9ea58db7564392a5f367b191dea85a60d64a23ed35d",
+    "files": 91,
+    "includes_node_modules": false,
+    "includes_runtime_state": false,
+    "raw_bytes_verified": true,
+    "delivered_to_user": false
+  },
+  "restored_archive_entries_byte_identical": 91,
+  "restored_tests": {
+    "pass": 29,
+    "fail": 0
+  },
+  "restored_sample_versions": 9,
+  "three_representative_xlsx_bytes_and_hashes": "MATCH",
+  "fixed_inputs_and_sources": "HASH_IDENTICAL_AFTER_REPLAY",
+  "real_rendered_problem_counts": {
+    "before_long": 0,
+    "after_long": 18
+  },
+  "renderer": "LibreOfficeDev 26.8.0.0.alpha0",
+  "limits": [
+    "no node_modules; no fresh offline rebuild from ZIP alone",
+    "existing installed dependencies reused; no install/download",
+    "mother horizontal pagination, reservations/example policy provisional",
+    "not formal Excel/PC/engineering acceptance",
+    "Library and verified browser delivery unavailable; not delivered to user"
+  ],
+  "prior_zips_unchanged": true,
+  "original_repo": "CLEAN",
+  "files": [
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/HVAC_VETTING_OFFLINE_LITE_20261007_VISUALFIX.zip",
+      "bytes": 1431868,
+      "sha256": "736dc2f41691071c0e6cb9ea58db7564392a5f367b191dea85a60d64a23ed35d"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/HVAC_VETTING_OFFLINE_LITE_20261007_VISUALFIX.zip.sha256",
+      "bytes": 115,
+      "sha256": "8f4737b65861b94ecd6d8f5ce66489e18155ec2278beb9d00293129d9b24a297"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/README_LITE.md",
+      "bytes": 4218,
+      "sha256": "21a7b81bfd53f81c3025d1cda5627a9907a535863dcedcfac4ed73d5afdddd47"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/VISUAL_REVIEW.md",
+      "bytes": 2259,
+      "sha256": "bf59329f6b4812ac10bb2dd4a1cec3e56a2d88f4fdb13e4ba4165c3edc3f130c"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/VISUAL_FIX.diff",
+      "bytes": 8034,
+      "sha256": "81c8898d3cee86d9ad8c388cb21644d15880c76429f83703fa6dbebd0cd3baeb"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/long-before-after-preview.png",
+      "bytes": 190771,
+      "sha256": "3005fa11c85a30c0703f25008bd86c7871758b0ae7ce7d2567ada13ac5e18d4b"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/mother-normal-zero-preview.png",
+      "bytes": 101106,
+      "sha256": "854bdf3bbd880cacde7912ad5c28fcf3b514306d5a3f161a1852f13ffd44cf69"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/offline-tests-after-final-source.log",
+      "bytes": 3340,
+      "sha256": "00231b3be288a1c2de3d5862f41360a54be35bd1e9944f78218e9056fc51f535"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/lite-restored-tests.log",
+      "bytes": 3334,
+      "sha256": "3eba4d7cef93d009df17295962f7e9f9c536eb8c9ecf134c524b6c71194d100c"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/evidence/visual-lite-r1/lite-restored-readback.json",
+      "bytes": 4000,
+      "sha256": "f1e9943e1f97321d19beb83b89d738bb1d6250360192a3e32c14d8bb4995bdd1"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r3/normal/report-v1.0.xlsx",
+      "bytes": 69798,
+      "sha256": "6151835582d3ec5abe714378e0490501d75cd2d5b3fd2c677b64eb056bcdc06f"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r3/zero/report-v1.0.xlsx",
+      "bytes": 69640,
+      "sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c"
+    },
+    {
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r3/long-18/report-v1.0.xlsx",
+      "bytes": 70169,
+      "sha256": "418f63b53aa7f5dde17212dddb0c79c2d7140a7003b2617e4de4abde6cc49f2e"
+    }
+  ]
+}

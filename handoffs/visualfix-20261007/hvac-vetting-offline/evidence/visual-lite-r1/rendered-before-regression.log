@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/hvac-vetting-offline-20261007/development/offline/scripts/verify-rendered-pdf.py", line 25, in <module>
+    assert actual==count,(case,'CLIPPED_OR_MISSING_FINDING',actual,count)
+           ^^^^^^^^^^^^^
+AssertionError: ('long-18', 'CLIPPED_OR_MISSING_FINDING', 0, 18)

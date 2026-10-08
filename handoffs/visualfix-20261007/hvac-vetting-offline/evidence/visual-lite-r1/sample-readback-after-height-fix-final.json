@@ -1,0 +1,150 @@
+{
+  "reader": "openpyxl 3.1.5",
+  "scope": "synthetic workbook structure/content/hash; not visual or engineering acceptance",
+  "results": [
+    {
+      "case": "normal",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "6151835582d3ec5abe714378e0490501d75cd2d5b3fd2c677b64eb056bcdc06f",
+      "findings": 2,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "normal",
+      "version": "2.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "f979f2fdd930348b4c99f0646184cfbd969572ab89997dd933b875252cc7de17",
+      "findings": 2,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "zero",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c",
+      "findings": 0,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "long-18",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "418f63b53aa7f5dde17212dddb0c79c2d7140a7003b2617e4de4abde6cc49f2e",
+      "findings": 18,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "unknown-source",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "c5826b1fbe3f8ec83bc8e7301a7f3a6cddd0abd6953360c352dc865d4e281309",
+      "findings": 1,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "malicious-text",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "a5cf70fd5678fe00d9b4575028048bd7c06fcaceabf23128b5c5957728148424",
+      "findings": 2,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "qc-three-stop",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "959fd9f31a630bde5081fc3b3c24072a9053fa222d15177301f84452300b25e8",
+      "findings": 0,
+      "qc": {
+        "rounds_used": 3,
+        "state": "stopped_after_three"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "qc-real-revision",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "c31847e837a18e5b8bd403e9f598e17dd454125d5615d877c5664534393d22d0",
+      "findings": 1,
+      "qc": {
+        "rounds_used": 2,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    },
+    {
+      "case": "recovery",
+      "version": "1.0",
+      "status": "PASS_OFFLINE_READBACK",
+      "report_sha256": "4251deddf2623c02bc83161db84db7cdd1a55826ec824d19c9c2323246bbe146",
+      "findings": 2,
+      "qc": {
+        "rounds_used": 1,
+        "state": "passed_synthetic"
+      },
+      "changed_parts": [
+        "xl/worksheets/sheet2.xml",
+        "xl/sharedStrings.xml",
+        "xl/styles.xml"
+      ]
+    }
+  ]
+}

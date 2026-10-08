@@ -1,0 +1,52 @@
+{
+  "engine": "LibreOffice Calc PDF + PyMuPDF",
+  "status": "PASS",
+  "scope": "rendered-content regression; visual/print signoff remains provisional",
+  "results": [
+    {
+      "case": "mother",
+      "pages": 8,
+      "report_pages": 2,
+      "full_problem_text_counts": [],
+      "status": "PASS_RENDERED_TEXT_REGRESSION"
+    },
+    {
+      "case": "normal",
+      "pages": 8,
+      "report_pages": 2,
+      "full_problem_text_counts": [
+        {
+          "expected": 1,
+          "actual": 1,
+          "description_sha256": "69d7fdddce465669b4279748b2ce70591022fec6648b8cb16a8c2393b1e91bd1"
+        },
+        {
+          "expected": 1,
+          "actual": 1,
+          "description_sha256": "631716e76c86805429d7dd7a1313061860b287d3e036f3cff7dddea23a6a70fa"
+        }
+      ],
+      "status": "PASS_RENDERED_TEXT_REGRESSION"
+    },
+    {
+      "case": "zero",
+      "pages": 8,
+      "report_pages": 2,
+      "full_problem_text_counts": [],
+      "status": "PASS_RENDERED_TEXT_REGRESSION"
+    },
+    {
+      "case": "long-18",
+      "pages": 24,
+      "report_pages": 18,
+      "full_problem_text_counts": [
+        {
+          "expected": 18,
+          "actual": 18,
+          "description_sha256": "30cd6a818f75277fbe1bd65389c58a31a4f48b3841db9393029600920a4e8f50"
+        }
+      ],
+      "status": "PASS_RENDERED_TEXT_REGRESSION"
+    }
+  ]
+}

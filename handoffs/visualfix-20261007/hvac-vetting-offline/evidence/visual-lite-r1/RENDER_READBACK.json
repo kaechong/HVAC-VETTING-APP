@@ -1,0 +1,460 @@
+[
+  {
+    "case": "mother",
+    "pdf": "evidence/visual-lite-r1/pdf/mother/HVAC_VETTING_CHECKLIST_MOTHER_20261007.pdf",
+    "pdf_pages": 8,
+    "report_pages": [
+      {
+        "page": 7,
+        "text_chars": 97,
+        "text_start": "項目名稱\n複核日期\n複核版本\n編號\n複核文件名稱\n問題內容\n1\nXXXXX\n沒有提交通風系統風量計算書及空調系統負荷計算書；\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n"
+      },
+      {
+        "page": 8,
+        "text_chars": 24,
+        "text_start": "違反法規\n第38/2022號行政法規 第25條\n"
+      }
+    ],
+    "first_six_checklist_pages_pixel_identical": false,
+    "cell_text_checks": []
+  },
+  {
+    "case": "normal",
+    "pdf": "evidence/visual-lite-r1/pdf/normal/report-v1.0.pdf",
+    "pdf_pages": 8,
+    "report_pages": [
+      {
+        "page": 7,
+        "text_chars": 205,
+        "text_start": "2026-10-07\n1.0\n編號\n複核文件名稱\n問題內容\n1.0\n2.0\n3.0\n4.0\n5.0\n6.0\n7.0\n8.0\n9.0\n10.0\n11.0\n12.0\n13.0\n14.0\n15.0\nSYNTHETIC_正常四欄\nSYNTHETIC-source.txt \np.1\n合成觀察 1：測試數值與合成要求不一致；\nSYNTHETIC-source.txt \np.1\n合成觀察 2：測試數值與合成要求"
+      },
+      {
+        "page": 8,
+        "text_chars": 95,
+        "text_start": "違反法規\n[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      }
+    ],
+    "first_six_checklist_pages_pixel_identical": true,
+    "cell_text_checks": [
+      {
+        "cell": "B6",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C6",
+        "full_text_in_rendered_pdf": true,
+        "chars": 20
+      },
+      {
+        "cell": "D6",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B7",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C7",
+        "full_text_in_rendered_pdf": true,
+        "chars": 20
+      },
+      {
+        "cell": "D7",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      }
+    ]
+  },
+  {
+    "case": "zero",
+    "pdf": "evidence/visual-lite-r1/pdf/zero/report-v1.0.pdf",
+    "pdf_pages": 8,
+    "report_pages": [
+      {
+        "page": 7,
+        "text_chars": 114,
+        "text_start": "2026-10-07\n1.0\n編號\n複核文件名稱\n問題內容\n1.0\n2.0\n3.0\n4.0\n5.0\n6.0\n7.0\n8.0\n9.0\n10.0\n11.0\n12.0\n13.0\n14.0\n15.0\nSYNTHETIC_零問題不代表符\n"
+      },
+      {
+        "page": 8,
+        "text_chars": 8,
+        "text_start": "違反法規\n符合\n"
+      }
+    ],
+    "first_six_checklist_pages_pixel_identical": true,
+    "cell_text_checks": []
+  },
+  {
+    "case": "long-18",
+    "pdf": "evidence/visual-lite-r1/pdf/long-18/report-v1.0.pdf",
+    "pdf_pages": 24,
+    "report_pages": [
+      {
+        "page": 7,
+        "text_chars": 827,
+        "text_start": "2026-10-07\n1.0\n編號\n複核文件名稱\n問題內容\n1.0\n2.0\nSYNTHETIC_長中文十八行\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用"
+      },
+      {
+        "page": 8,
+        "text_chars": 780,
+        "text_start": "3.0\n4.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，保留"
+      },
+      {
+        "page": 9,
+        "text_chars": 780,
+        "text_start": "5.0\n6.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，保留"
+      },
+      {
+        "page": 10,
+        "text_chars": 780,
+        "text_start": "7.0\n8.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，保留"
+      },
+      {
+        "page": 11,
+        "text_chars": 781,
+        "text_start": "9.0\n10.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，保"
+      },
+      {
+        "page": 12,
+        "text_chars": 782,
+        "text_start": "11.0\n12.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，"
+      },
+      {
+        "page": 13,
+        "text_chars": 782,
+        "text_start": "13.0\n14.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，"
+      },
+      {
+        "page": 14,
+        "text_chars": 782,
+        "text_start": "15.0\n16.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，"
+      },
+      {
+        "page": 15,
+        "text_chars": 782,
+        "text_start": "17.0\n18.0\nSYNTHETIC-source.txt \np.1\n原文不作工程判斷。這是長中文合成文字用於檢查自\n動換行及行高，保留原文不作工程判斷。這是長中文\n合成文字用於檢查自動換行及行高，保留原文不作工\n程判斷。這是長中文合成文字用於檢查自動換行及行\n高，保留原文不作工程判斷。這是長中文合成文字用\n於檢查自動換行及行高，保留原文不作工程判斷。這\n是長中文合成文字用於檢查自動換行及行高，"
+      },
+      {
+        "page": 16,
+        "text_chars": 97,
+        "text_start": "違反法規\n行\n[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 17,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 18,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 19,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 20,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 21,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 22,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 23,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      },
+      {
+        "page": 24,
+        "text_chars": 90,
+        "text_start": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)\n[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)\n"
+      }
+    ],
+    "first_six_checklist_pages_pixel_identical": true,
+    "cell_text_checks": [
+      {
+        "cell": "B6",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C6",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D6",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B7",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C7",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D7",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B8",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C8",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D8",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B9",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C9",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D9",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B10",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C10",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D10",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B11",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C11",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D11",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B12",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C12",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D12",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B13",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C13",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D13",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B14",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C14",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D14",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B15",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C15",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D15",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B16",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C16",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D16",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B17",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C17",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D17",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B18",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C18",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D18",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B19",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C19",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D19",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B20",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C20",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D20",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B21",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C21",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D21",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      },
+      {
+        "cell": "B22",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C22",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D22",
+        "full_text_in_rendered_pdf": true,
+        "chars": 41
+      },
+      {
+        "cell": "B23",
+        "full_text_in_rendered_pdf": true,
+        "chars": 24
+      },
+      {
+        "cell": "C23",
+        "full_text_in_rendered_pdf": false,
+        "chars": 385
+      },
+      {
+        "cell": "D23",
+        "full_text_in_rendered_pdf": true,
+        "chars": 47
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "736dc2f41691071c0e6cb9ea58db7564392a5f367b191dea85a60d64a23ed35d",
+  "extracted_files_verified": 90,
+  "zip_entries": 91,
+  "node_modules_in_zip": false,
+  "dependency_validation": "reused existing installed node_modules through local symlink; not a fresh offline install",
+  "root": "/workspace/hvac-vetting-offline-20261007/restore-check-lite-r1/hvac-vetting-offline"
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "case": "mother",
+    "input": "/workspace/hvac-vetting-offline-20261007/baseline/plan/templates/HVAC_VETTING_CHECKLIST_MOTHER_20261007.xlsx",
+    "input_sha256": "e968805be7b0e57f94c2a3e391c495f25730c55b9800123b15a6bf8900d56efd",
+    "sheets": [
+      {
+        "title": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      },
+      {
+        "title": "工作表1",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      }
+    ]
+  },
+  {
+    "case": "normal",
+    "input": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/normal/report-v1.0.xlsx",
+    "input_sha256": "28c034c3a2bbeb734b224e0805b90693a26ae989fc28638b59666848ba4cc39f",
+    "sheets": [
+      {
+        "title": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      },
+      {
+        "title": "工作表1",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      }
+    ]
+  },
+  {
+    "case": "zero",
+    "input": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/zero/report-v1.0.xlsx",
+    "input_sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c",
+    "sheets": [
+      {
+        "title": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      },
+      {
+        "title": "工作表1",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      }
+    ]
+  },
+  {
+    "case": "long-18",
+    "input": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/long-18/report-v1.0.xlsx",
+    "input_sha256": "2731697bbcee414be9a4919777621c6f809c931a2dcabe489197705b4b96043f",
+    "sheets": [
+      {
+        "title": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      },
+      {
+        "title": "工作表1",
+        "print_area": "",
+        "orientation": null,
+        "paper_size": null,
+        "fitToWidth": null,
+        "fitToHeight": null,
+        "scale": null
+      }
+    ]
+  }
+]
