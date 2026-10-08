@@ -1,0 +1,74 @@
+{
+  "scope": "approved synthetic offline corrections only",
+  "tests": {
+    "pass": 29,
+    "fail": 0,
+    "skipped": 0,
+    "final_log": "evidence/offline-tests-final.log"
+  },
+  "initial_regression": {
+    "pass": 1,
+    "fail": 5,
+    "log": "evidence/qc-revision-before.log",
+    "finding_revision": "STALE_QC_SNAPSHOT",
+    "source_revision": "STALE_QC_SNAPSHOT",
+    "historical_reason_tamper": "Missing expected exception",
+    "persistent_reset_guard": "new ledger module not yet present",
+    "long_filename": "ENAMETOOLONG after reservation"
+  },
+  "read_only_dimension": {
+    "dimension": null,
+    "rows": 23,
+    "last_numbers": [
+      16,
+      17,
+      18
+    ],
+    "findings": 18,
+    "renderer_changed": false
+  },
+  "filename_boundary": {
+    "255_bytes": "PASS_FULL_NAME_PUBLISHED",
+    "256_bytes": "REJECTED_BEFORE_RESERVATION",
+    "100_chinese_characters": "REJECTED_BEFORE_RESERVATION"
+  },
+  "sample_versions": 9,
+  "sample_readback": "PASS",
+  "originals": 115,
+  "original_repo": "CLEAN",
+  "old_zip_preserved": {
+    "zip": "HVAC_VETTING_OFFLINE_HANDOFF_20261007.zip",
+    "bytes": 14855321,
+    "sha256": "ff65d719973d81ed27bb7d6ffb598c9e0f11cdf4c6de4e51c91aac85e6f401fb",
+    "preserved": true
+  },
+  "trust_boundary": "Trusted local ledger; no cryptographic signer or real independent QC; deletion of ledger by filesystem owner outside tested API is not protected",
+  "formal_engineering": "NOT_RUN",
+  "product_score": "NOT_ASSESSED",
+  "samples": [
+    {
+      "case": "normal",
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/normal/report-v1.0.xlsx",
+      "bytes": 69799,
+      "sha256": "28c034c3a2bbeb734b224e0805b90693a26ae989fc28638b59666848ba4cc39f"
+    },
+    {
+      "case": "zero",
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/zero/report-v1.0.xlsx",
+      "bytes": 69640,
+      "sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c"
+    },
+    {
+      "case": "long-18",
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/long-18/report-v1.0.xlsx",
+      "bytes": 70169,
+      "sha256": "2731697bbcee414be9a4919777621c6f809c931a2dcabe489197705b4b96043f"
+    },
+    {
+      "case": "qc-real-revision",
+      "path": "/workspace/hvac-vetting-offline-20261007/samples/final-r2/qc-real-revision/report-v1.0.xlsx",
+      "bytes": 69759,
+      "sha256": "709a66b7bd3d26fe4f2a80c3a04fd25afb580dd943cd01387957f17f12d14273"
+    }
+  ]
+}

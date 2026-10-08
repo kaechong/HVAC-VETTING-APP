@@ -1,0 +1,14 @@
+{
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "python": "3.12.14",
+  "LibreOffice": "26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "openpyxl": "3.1.5",
+  "PyMuPDF": "1.26.6",
+  "Pillow": "12.3.0",
+  "dependencies": {
+    "ajv": "8.17.1",
+    "exceljs": "4.4.0",
+    "fflate": "0.8.3"
+  }
+}

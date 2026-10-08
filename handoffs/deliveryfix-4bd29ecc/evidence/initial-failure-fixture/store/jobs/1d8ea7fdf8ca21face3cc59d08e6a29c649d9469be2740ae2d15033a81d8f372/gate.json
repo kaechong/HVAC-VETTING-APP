@@ -1,0 +1,145 @@
+{
+  "accepted": [
+    {
+      "finding_id": "SYNTHETIC-F-1",
+      "number": 1,
+      "document": "SYNTHETIC-source.txt p.1",
+      "problem": "合成觀察 1：測試數值與合成要求不一致；",
+      "citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)"
+    }
+  ],
+  "quarantined": [],
+  "qc": {
+    "rounds_used": 1,
+    "state": "passed_synthetic"
+  },
+  "coverage": [
+    {
+      "checklist_id": "CHK-01",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-02",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-03",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-04",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-05",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-06",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-07",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-08",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-09",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-10",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-11",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-12",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-13",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-14",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-15",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-16",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-17",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-18",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-19",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-20",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-21",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-22",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-23",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-24",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    }
+  ],
+  "snapshot_sha256": "d6f4eaebe5b697a20a694cc08e58fce91da3b9a8f50d94d08dcb80c4b5db0efc",
+  "limitations": [
+    "SYNTHETIC_ONLY",
+    "NOT_ENGINEERING_ACCEPTANCE",
+    "ZERO_FINDINGS_IS_NOT_COMPLIANCE",
+    "FULL_SUBCONDITION_MAPPING_PENDING"
+  ]
+}

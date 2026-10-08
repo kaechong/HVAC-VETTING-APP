@@ -1,0 +1,20 @@
+[
+  {
+    "case": "normal",
+    "path": "samples/final-r3/normal/report-v1.0.xlsx",
+    "bytes": 69798,
+    "sha256": "6151835582d3ec5abe714378e0490501d75cd2d5b3fd2c677b64eb056bcdc06f"
+  },
+  {
+    "case": "zero",
+    "path": "samples/final-r3/zero/report-v1.0.xlsx",
+    "bytes": 69640,
+    "sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c"
+  },
+  {
+    "case": "long-18",
+    "path": "samples/final-r3/long-18/report-v1.0.xlsx",
+    "bytes": 70169,
+    "sha256": "418f63b53aa7f5dde17212dddb0c79c2d7140a7003b2617e4de4abde6cc49f2e"
+  }
+]

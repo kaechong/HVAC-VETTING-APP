@@ -1,0 +1,271 @@
+{
+  "notice": "Historical source transcription, not verified law or an executable rule set. Preserve all subconditions; reconcile the existing 59-condition mapping before activation.",
+  "source_id": "1ziMfxvgUG6PZuDoFwztZhyIh0WVscsksMeI-7B3_pNU",
+  "retrieved_on": "2026-10-07",
+  "items": [
+    {
+      "id": "CHK-01",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 3,
+      "system": "通風及空調設施",
+      "name": "入則組成資料",
+      "source_citation_unverified": "第38/2022號行政法規 第25條",
+      "source_requirements_unverified": "1. 須提交通風系統風量計算書及空調系統負荷計算書；\n2. 須提交說明及解釋備忘錄、平面圖及系統圖、控制邏輯圖。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-02",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 4,
+      "system": "通風及空調設施",
+      "name": "手動制動裝置設置(急停制)",
+      "source_citation_unverified": "第39/2022號行政法規 第318條第1款(一)項",
+      "source_requirements_unverified": "1. 是否在易於通達處設置手動制動裝置；\n2. 是否具備適當且清晰之標誌以供火災時使用。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-03",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 5,
+      "system": "通風及空調設施",
+      "name": "機組間隔防火隔離",
+      "source_citation_unverified": "第39/2022號行政法規 第318條第1款(二)項及第3款、第321條",
+      "source_requirements_unverified": "1. 通風及空調機組應安裝在與樓宇其餘部分隔開的間隔內(AHU/PAU)；\n1. 第I~V、VII及VIII使用組：牆壁/樓板耐火等級為REI 90 / EI 90，門為EI 30；\n2. 第VI使用組：牆壁/樓板耐火等級為REI 120 / EI 120，門為EI 60；\n3. 間隔內嚴禁儲存可燃產品及任何無關材料。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-04",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 6,
+      "system": "通風及空調設施",
+      "name": "自動切斷與火災探測聯動",
+      "source_citation_unverified": "第39/2022號行政法規 第318條第2款",
+      "source_requirements_unverified": "1. 機組間隔內是否設有火災自動探測設施；\n2. 發生火災時是否能自動連動並中斷機組運作。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-05",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 7,
+      "system": "通風及空調設施",
+      "name": "室外空氣進氣口與防火閘",
+      "source_citation_unverified": "第39/2022號行政法規 第319條",
+      "source_requirements_unverified": "1. 進氣口位置是否能防止室外火災或煙霧蔓延至樓宇內部；\n2. 進氣口管道是否配備由煙霧探測器啟動之防火閘（隔火裝置），且耐火等級與管道相同。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-06",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 8,
+      "system": "通風及空調設施",
+      "name": "通風管道材料與防火分段",
+      "source_citation_unverified": "第39/2022號行政法規 第320條",
+      "source_requirements_unverified": "1. 通風管道材料遇火反應等級是否為A1；\n2. 穿越隔火牆或樓板處是否設有由火災自動探測系統啟動之隔火裝置，其耐火等級是否與所穿過之牆/板相同。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-07",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 10,
+      "system": "排煙系統（機械排煙）",
+      "name": "入則組成資料",
+      "source_citation_unverified": "第38/2022號行政法規 第23條",
+      "source_requirements_unverified": "1. 須提交排煙系統風量計算書；\n2. 須提交說明及解釋備忘錄、平面圖及系統圖、控制邏輯圖。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-08",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 11,
+      "system": "排煙系統（機械排煙）",
+      "name": "獨立運送與後備風機",
+      "source_citation_unverified": "第39/2022號行政法規 第173條",
+      "source_requirements_unverified": "1. 每個防火分區之機械排煙系統是否獨立運送/運作；\n2. 若利用通風系統進行排煙，是否設置機械排煙系統後備風機；\n3. 風管佈置是否有跨防火分區情況出現? 如有，防火分區間隔結構耐火等級是否相同/高於風管。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-09",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 12,
+      "system": "排煙系統（機械排煙）",
+      "name": "排煙及補風管道耐火與耐溫性能",
+      "source_citation_unverified": "第39/2022號行政法規 第174條第1-3款",
+      "source_requirements_unverified": "1. 管道材料遇火反應等級為A1，耐火等級為EI 120；\n2. 管道及風機在高溫250°C下，是否能在結構耐火時間內維持運轉。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-10",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 13,
+      "system": "排煙系統（機械排煙）",
+      "name": "排煙管道井構件耐火能力",
+      "source_citation_unverified": "第39/2022號行政法規 第174條第4款",
+      "source_requirements_unverified": "裝有排煙/補風管道之管道井構件，是否在結構耐火時間內保持穩定、抗洩漏及隔熱能力（REI）。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-11",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 14,
+      "system": "排煙系統（機械排煙）",
+      "name": "排煙量與補風量標準",
+      "source_citation_unverified": "第39/2022號行政法規 第175條、第360條",
+      "source_requirements_unverified": "1. 地庫（>300m²）應設有⾃然排煙系統或獨立的機械排煙系統；\n2. 防火分區每小時最低排煙量不低於總容積之8倍（8 ACH）；\n3. 須提交排煙系統風量計算書；\n4. 最低補風量不低於排煙量之80%。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-12",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 15,
+      "system": "排煙系統（機械排煙）",
+      "name": "室內及室外網罩（風口）佈置",
+      "source_citation_unverified": "第39/2022號行政法規 第176條",
+      "source_requirements_unverified": "1. 室內補風口應置於近地面處，排煙口位於近天花板且高於進氣口；\n2. 室內排煙口/補風口之間距是否會出現短路(<5 m)；\n3. 走道排煙口間距最大7 m（直道10 m）；\n4. 室外排煙口離地高度>=3 m，距入口/進氣口>=5 m；\n5. 室外排煙口如安裝在距離地板6米以下，則不得朝向地⾯。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-13",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 16,
+      "system": "排煙系統（機械排煙）",
+      "name": "機械排煙與補風裝置間隔隔離",
+      "source_citation_unverified": "第39/2022號行政法規 第178條（表二十四）",
+      "source_requirements_unverified": "1. 機械排煙及補風裝置是否設於獨立間隔內；\n2. 第I~V、VII、VIII使用組：樓板/牆壁 REI/EI 90，門 EI 30；\n3. 第VI使用組：樓板/牆壁 REI/EI 120，門 EI 60。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-14",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 17,
+      "system": "排煙系統（機械排煙）",
+      "name": "網罩自動開啟與跨樓層手動控制",
+      "source_citation_unverified": "第39/2022號行政法規 第179條、第180條",
+      "source_requirements_unverified": "1. 平時保持關閉，火災時由受災樓層火災自動探測系統自動開啟網罩；\n2. 未受火災波及樓層之網罩僅能由安全崗控制面板手動開啟。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-15",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 18,
+      "system": "排煙系統（自然排煙）",
+      "name": "水平共用通道自然排煙窗",
+      "source_citation_unverified": "第39/2022號行政法規 第168條、第169條",
+      "source_requirements_unverified": "1. 第I使用組或走火距離超標之水平共用通道應採自然排煙；\n2. 如水平共用通道應採自然排煙但無條件採用時，應設置機械排煙系統；\n3. 是否設有至少2扇向室外開啟之窗戶並吹達整個空間；\n4. 每扇窗總面積不小於1 m²，可開啟面積不小於0.5 m²。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-16",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 19,
+      "system": "排煙系統（自然排煙）",
+      "name": "水平共用通道管道抽熱",
+      "source_citation_unverified": "第39/2022號行政法規 第170條",
+      "source_requirements_unverified": "1. 管道材料遇火反應等級是否為A1；\n2. 樓宇底部及頂部是否設有空氣進出通風口；\n3. 每15 m²至少設1個進氣口（>=0.1 m²）及1個排煙口（>=0.2 m²）。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-17",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 20,
+      "system": "排煙系統（自然排煙）",
+      "name": "樓梯間自然排煙窗與管道抽熱",
+      "source_citation_unverified": "第39/2022號行政法規 第171條、第172條",
+      "source_requirements_unverified": "1. 室外窗面積>=0.5 m²（天井窗>=0.8 m²），每窗可開啟面積>=0.25 m²；\n2. 無外窗樓梯：頂部常開通風口>=1.2 m²，底部進風口>=0.6 m²，樓梯井中空寬度>=0.3 m。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-18",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 22,
+      "system": "樓梯加壓系統",
+      "name": "入則組成資料",
+      "source_citation_unverified": "第38/2022號行政法規 第23條",
+      "source_requirements_unverified": "1. 須提交樓梯加壓系統風量計算書；\n2. 須提交說明及解釋備忘錄、平面圖及系統圖、控制邏輯圖。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-19",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 23,
+      "system": "樓梯加壓系統",
+      "name": "加壓啟動、壓差與風速標準",
+      "source_citation_unverified": "第39/2022號行政法規 第181條、第184條",
+      "source_requirements_unverified": "1. 收到火警訊號後立即啟動；\n2. 門關閉時樓梯間超壓>=50 Pa，推開門扇所需力<=133 N；\n3. 門開啟時斷面風速>=0.75 m/s；\n4. 每層設有低阻力空氣釋放途徑。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-20",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 24,
+      "system": "樓梯加壓系統",
+      "name": "風機數量與後備配置",
+      "source_citation_unverified": "第39/2022號行政法規 第182條(一)項",
+      "source_requirements_unverified": "至少設置兩組機械補風機，其中一組為後備風機（1用1備）。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-21",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 25,
+      "system": "樓梯加壓系統",
+      "name": "風機房防火隔離",
+      "source_citation_unverified": "第39/2022號行政法規 第183條",
+      "source_requirements_unverified": "增壓風機應安裝於 REI 60（承重）或 EI 60（非承重）耐火等級之獨立間隔內。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-22",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 26,
+      "system": "樓梯加壓系統",
+      "name": "管道煙氣自動切斷裝置",
+      "source_citation_unverified": "第39/2022號行政法規 第185條",
+      "source_requirements_unverified": "增壓管道內是否設有自動切斷裝置(煙感+MFSD)，當偵測到管道內有煙氣時自動關閉增壓系統。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-23",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 28,
+      "system": "安全崗（排煙相關設施）",
+      "name": "控制面板與手動控制器設置",
+      "source_citation_unverified": "第39/2022號行政法規 第180條、第182條(三)項、第274條",
+      "source_requirements_unverified": "1. 設有樓梯增壓系統控制面板及手動開啟控制器；\n2. 設有可手動開啟未受波及樓層排煙網罩之控制面板；\n3. 設有警報、自動探測及排煙系統運作狀態接收控制板及手動啟動裝置。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    },
+    {
+      "id": "CHK-24",
+      "source_sheet": "澳門第392022號行政法規_HVAC與排煙系統_VETTIN",
+      "source_row": 30,
+      "system": "廚房煙囪及排煙管道",
+      "name": "廚房排煙管道材料與防火防護",
+      "source_citation_unverified": "第39/2022號行政法規 第340條、第343條",
+      "source_requirements_unverified": "1. 廚房排煙管道材料遇火反應等級必須為A1；\n2. 穿越其他不同用途之間隔時，需符合第174條（耐火等級REI 120 / REI 90，耐溫250°C）。",
+      "legal_validation": "pending",
+      "implementation_status": "not_assessed"
+    }
+  ]
+}

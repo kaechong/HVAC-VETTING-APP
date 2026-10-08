@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "publication_payload_files": 97,
+  "all_original_bytes_match_reviewed_manifest": true,
+  "original_zip_bytes": 1431868,
+  "original_zip_sha256": "736dc2f41691071c0e6cb9ea58db7564392a5f367b191dea85a60d64a23ed35d",
+  "remote_operations": 0,
+  "network_requests": 0
+}

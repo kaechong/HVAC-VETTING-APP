@@ -1,0 +1,1154 @@
+{
+  "schema_version": "0.1",
+  "kind": "synthetic-offline",
+  "owner_id": "SYNTHETIC-OWNER",
+  "review_id": "SYNTHETIC-REVIEW-234ab4b270085813",
+  "report_event_id": "SYNTHETIC-EXPORT-1",
+  "project": {
+    "id": "SYNTHETIC-PROJECT",
+    "name": "SYNTHETIC_長中文十八行",
+    "mode": "DUAL",
+    "review_date": "2026-10-07"
+  },
+  "snapshot": {
+    "workflow_version": "offline-provisional-0.1",
+    "rules_version": "SYNTHETIC-RULES-1",
+    "input_sha256": "4d8f234aa0b50e4fe30931a5ea3d1e8f7d878173da38763761f61afee75f179c",
+    "main_context_id": "SYNTHETIC-MAIN"
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-1",
+      "file_id": "SYNTHETIC-FILE-1",
+      "filename": "SYNTHETIC-source.txt",
+      "relative_path": "SYNTHETIC-source.txt",
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "revision": "SYNTHETIC-R1",
+      "page": 1,
+      "kind": "document",
+      "drawing_id": "SYNTHETIC-M-101",
+      "source_type": "synthetic-text",
+      "synthetic": true,
+      "excerpt": "SYNTHETIC observation: value 12 differs from synthetic required value 10.",
+      "object": "SYNTHETIC-FAN",
+      "usage": "SYNTHETIC-USAGE",
+      "operating_condition": "SYNTHETIC-MODE",
+      "unit": "synthetic-unit",
+      "locator": "line 2; page marker 1"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "RULE-MACAU",
+      "synthetic": true,
+      "jurisdiction": "MACAU",
+      "status": "synthetic_verified",
+      "edition": "SYNTHETIC-2026",
+      "citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "original_text": "Synthetic requirement 10; not a legal source",
+      "effective_context": "SYNTHETIC ONLY",
+      "transition": "SYNTHETIC ONLY",
+      "usage": "SYNTHETIC-USAGE",
+      "trigger": "SYNTHETIC-MODE",
+      "source_url": "urn:synthetic:test-rule"
+    },
+    {
+      "rule_id": "RULE-IBC_NFPA",
+      "synthetic": true,
+      "jurisdiction": "IBC_NFPA",
+      "status": "synthetic_verified",
+      "edition": "SYNTHETIC-2026",
+      "citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "original_text": "Synthetic requirement 10; not a legal source",
+      "effective_context": "SYNTHETIC ONLY",
+      "transition": "SYNTHETIC ONLY",
+      "usage": "SYNTHETIC-USAGE",
+      "trigger": "SYNTHETIC-MODE",
+      "source_url": "urn:synthetic:test-rule"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "SYNTHETIC-F-1",
+      "checklist_id": "CHK-01",
+      "subcondition_id": "SYNTHETIC-CONDITION-1",
+      "path": "A",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-2",
+      "checklist_id": "CHK-02",
+      "subcondition_id": "SYNTHETIC-CONDITION-2",
+      "path": "B",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-3",
+      "checklist_id": "CHK-03",
+      "subcondition_id": "SYNTHETIC-CONDITION-3",
+      "path": "C",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-4",
+      "checklist_id": "CHK-04",
+      "subcondition_id": "SYNTHETIC-CONDITION-4",
+      "path": "D",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-5",
+      "checklist_id": "CHK-05",
+      "subcondition_id": "SYNTHETIC-CONDITION-5",
+      "path": "A",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-6",
+      "checklist_id": "CHK-06",
+      "subcondition_id": "SYNTHETIC-CONDITION-6",
+      "path": "B",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-7",
+      "checklist_id": "CHK-07",
+      "subcondition_id": "SYNTHETIC-CONDITION-7",
+      "path": "C",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-8",
+      "checklist_id": "CHK-08",
+      "subcondition_id": "SYNTHETIC-CONDITION-8",
+      "path": "D",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-9",
+      "checklist_id": "CHK-09",
+      "subcondition_id": "SYNTHETIC-CONDITION-9",
+      "path": "A",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-10",
+      "checklist_id": "CHK-10",
+      "subcondition_id": "SYNTHETIC-CONDITION-10",
+      "path": "B",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-11",
+      "checklist_id": "CHK-11",
+      "subcondition_id": "SYNTHETIC-CONDITION-11",
+      "path": "C",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-12",
+      "checklist_id": "CHK-12",
+      "subcondition_id": "SYNTHETIC-CONDITION-12",
+      "path": "D",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-13",
+      "checklist_id": "CHK-13",
+      "subcondition_id": "SYNTHETIC-CONDITION-13",
+      "path": "A",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-14",
+      "checklist_id": "CHK-14",
+      "subcondition_id": "SYNTHETIC-CONDITION-14",
+      "path": "B",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-15",
+      "checklist_id": "CHK-15",
+      "subcondition_id": "SYNTHETIC-CONDITION-15",
+      "path": "C",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-16",
+      "checklist_id": "CHK-16",
+      "subcondition_id": "SYNTHETIC-CONDITION-16",
+      "path": "D",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-17",
+      "checklist_id": "CHK-17",
+      "subcondition_id": "SYNTHETIC-CONDITION-17",
+      "path": "A",
+      "jurisdiction": "MACAU",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-MACAU",
+      "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    },
+    {
+      "finding_id": "SYNTHETIC-F-18",
+      "checklist_id": "CHK-18",
+      "subcondition_id": "SYNTHETIC-CONDITION-18",
+      "path": "B",
+      "jurisdiction": "IBC_NFPA",
+      "classification": "violation_candidate",
+      "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+      "primary_evidence_id": "E-1",
+      "evidence_ids": [
+        "E-1"
+      ],
+      "rule_id": "RULE-IBC_NFPA",
+      "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+      "location": "SYNTHETIC-M-101 / page 1",
+      "severity": "Minor",
+      "suggested_action": "合成測試，無工程建議"
+    }
+  ],
+  "coverage": [
+    {
+      "checklist_id": "CHK-01",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-02",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-03",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-04",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-05",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-06",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-07",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-08",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-09",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-10",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-11",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-12",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-13",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-14",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-15",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-16",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-17",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-18",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-19",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-20",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-21",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-22",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-23",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    },
+    {
+      "checklist_id": "CHK-24",
+      "state": "not_reviewed",
+      "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+    }
+  ],
+  "qc": {
+    "rounds": [
+      {
+        "round": 1,
+        "context_id": "SYNTHETIC-QC-1",
+        "snapshot": {
+          "owner_id": "SYNTHETIC-OWNER",
+          "review_id": "SYNTHETIC-REVIEW-234ab4b270085813",
+          "project": {
+            "id": "SYNTHETIC-PROJECT",
+            "name": "SYNTHETIC_長中文十八行",
+            "mode": "DUAL",
+            "review_date": "2026-10-07"
+          },
+          "snapshot": {
+            "workflow_version": "offline-provisional-0.1",
+            "rules_version": "SYNTHETIC-RULES-1",
+            "input_sha256": "4d8f234aa0b50e4fe30931a5ea3d1e8f7d878173da38763761f61afee75f179c",
+            "main_context_id": "SYNTHETIC-MAIN"
+          },
+          "findings": [
+            {
+              "finding_id": "SYNTHETIC-F-1",
+              "checklist_id": "CHK-01",
+              "subcondition_id": "SYNTHETIC-CONDITION-1",
+              "path": "A",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-2",
+              "checklist_id": "CHK-02",
+              "subcondition_id": "SYNTHETIC-CONDITION-2",
+              "path": "B",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-3",
+              "checklist_id": "CHK-03",
+              "subcondition_id": "SYNTHETIC-CONDITION-3",
+              "path": "C",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-4",
+              "checklist_id": "CHK-04",
+              "subcondition_id": "SYNTHETIC-CONDITION-4",
+              "path": "D",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-5",
+              "checklist_id": "CHK-05",
+              "subcondition_id": "SYNTHETIC-CONDITION-5",
+              "path": "A",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-6",
+              "checklist_id": "CHK-06",
+              "subcondition_id": "SYNTHETIC-CONDITION-6",
+              "path": "B",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-7",
+              "checklist_id": "CHK-07",
+              "subcondition_id": "SYNTHETIC-CONDITION-7",
+              "path": "C",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-8",
+              "checklist_id": "CHK-08",
+              "subcondition_id": "SYNTHETIC-CONDITION-8",
+              "path": "D",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-9",
+              "checklist_id": "CHK-09",
+              "subcondition_id": "SYNTHETIC-CONDITION-9",
+              "path": "A",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-10",
+              "checklist_id": "CHK-10",
+              "subcondition_id": "SYNTHETIC-CONDITION-10",
+              "path": "B",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-11",
+              "checklist_id": "CHK-11",
+              "subcondition_id": "SYNTHETIC-CONDITION-11",
+              "path": "C",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-12",
+              "checklist_id": "CHK-12",
+              "subcondition_id": "SYNTHETIC-CONDITION-12",
+              "path": "D",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-13",
+              "checklist_id": "CHK-13",
+              "subcondition_id": "SYNTHETIC-CONDITION-13",
+              "path": "A",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-14",
+              "checklist_id": "CHK-14",
+              "subcondition_id": "SYNTHETIC-CONDITION-14",
+              "path": "B",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-15",
+              "checklist_id": "CHK-15",
+              "subcondition_id": "SYNTHETIC-CONDITION-15",
+              "path": "C",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-16",
+              "checklist_id": "CHK-16",
+              "subcondition_id": "SYNTHETIC-CONDITION-16",
+              "path": "D",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-17",
+              "checklist_id": "CHK-17",
+              "subcondition_id": "SYNTHETIC-CONDITION-17",
+              "path": "A",
+              "jurisdiction": "MACAU",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-MACAU",
+              "code_citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            },
+            {
+              "finding_id": "SYNTHETIC-F-18",
+              "checklist_id": "CHK-18",
+              "subcondition_id": "SYNTHETIC-CONDITION-18",
+              "path": "B",
+              "jurisdiction": "IBC_NFPA",
+              "classification": "violation_candidate",
+              "description": "這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。這是長中文合成文字用於檢查自動換行及行高，保留原文不作工程判斷。；",
+              "primary_evidence_id": "E-1",
+              "evidence_ids": [
+                "E-1"
+              ],
+              "rule_id": "RULE-IBC_NFPA",
+              "code_citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "location": "SYNTHETIC-M-101 / page 1",
+              "severity": "Minor",
+              "suggested_action": "合成測試，無工程建議"
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "E-1",
+              "file_id": "SYNTHETIC-FILE-1",
+              "filename": "SYNTHETIC-source.txt",
+              "relative_path": "SYNTHETIC-source.txt",
+              "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+              "revision": "SYNTHETIC-R1",
+              "page": 1,
+              "kind": "document",
+              "drawing_id": "SYNTHETIC-M-101",
+              "source_type": "synthetic-text",
+              "synthetic": true,
+              "excerpt": "SYNTHETIC observation: value 12 differs from synthetic required value 10.",
+              "object": "SYNTHETIC-FAN",
+              "usage": "SYNTHETIC-USAGE",
+              "operating_condition": "SYNTHETIC-MODE",
+              "unit": "synthetic-unit",
+              "locator": "line 2; page marker 1"
+            }
+          ],
+          "rules": [
+            {
+              "rule_id": "RULE-MACAU",
+              "synthetic": true,
+              "jurisdiction": "MACAU",
+              "status": "synthetic_verified",
+              "edition": "SYNTHETIC-2026",
+              "citation": "[澳門] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "original_text": "Synthetic requirement 10; not a legal source",
+              "effective_context": "SYNTHETIC ONLY",
+              "transition": "SYNTHETIC ONLY",
+              "usage": "SYNTHETIC-USAGE",
+              "trigger": "SYNTHETIC-MODE",
+              "source_url": "urn:synthetic:test-rule"
+            },
+            {
+              "rule_id": "RULE-IBC_NFPA",
+              "synthetic": true,
+              "jurisdiction": "IBC_NFPA",
+              "status": "synthetic_verified",
+              "edition": "SYNTHETIC-2026",
+              "citation": "[IBC/NFPA] SYNTHETIC-2026 Test clause 1 (非真實法規)",
+              "original_text": "Synthetic requirement 10; not a legal source",
+              "effective_context": "SYNTHETIC ONLY",
+              "transition": "SYNTHETIC ONLY",
+              "usage": "SYNTHETIC-USAGE",
+              "trigger": "SYNTHETIC-MODE",
+              "source_url": "urn:synthetic:test-rule"
+            }
+          ],
+          "coverage": [
+            {
+              "checklist_id": "CHK-01",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-02",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-03",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-04",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-05",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-06",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-07",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-08",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-09",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-10",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-11",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-12",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-13",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-14",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-15",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-16",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-17",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-18",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-19",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-20",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-21",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-22",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-23",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            },
+            {
+              "checklist_id": "CHK-24",
+              "state": "not_reviewed",
+              "reason": "本次只測離線契約、渲染及交付；未審工程內容或全部子條件"
+            }
+          ]
+        },
+        "snapshot_sha256": "433f9fd785fa339b978cc4f42abcf966ca6c77865270ad1380482832a9c7c1e3",
+        "previous_receipt_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "decisions": [
+          {
+            "finding_id": "SYNTHETIC-F-1",
+            "finding_sha256": "b86c14387d9b611c4cf05e211e7bd9c5c4d7e8dcbc9412cca265a2937acd5caa",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-2",
+            "finding_sha256": "7b3e411f28a815cb004d60a58e629fc36d813d8befc8c2268b6393f76b9b64ec",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-3",
+            "finding_sha256": "77d9089e88dda43eddaca4b744c2f4af268d677c9724a204b1fd7d0e99744630",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-4",
+            "finding_sha256": "2438a2ad4d4d1b08166d16122df98d0f88cc80eae3e55cecc3ea70d93d28d007",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-5",
+            "finding_sha256": "2730b0e88539b3358ae63b8a5c31e1657071c506a4eb907c5f3a919d22219c69",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-6",
+            "finding_sha256": "9f284ea109c1567fa9be39ed88796f443b32574c8feddd212fca2e2adf9c35dc",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-7",
+            "finding_sha256": "05b9d236cd86ee7dd36cae901e123ec09195021ea64001881fdea55b38bd1abd",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-8",
+            "finding_sha256": "9dc61539def666fb26d55b52aedf689b138ad8b5e178ce35c4ca9af32a4bb80e",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-9",
+            "finding_sha256": "b6110fa43e626e9eb6fb8ab2afae3a48c3e85db6f8e789b4b7213f1ca506e999",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-10",
+            "finding_sha256": "7b968369b1a33a0d324a7362eedb508f2b893899be9a2b8c59f23380410de1ae",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-11",
+            "finding_sha256": "380b86479df36782808ddf3bf07835f700640c556576f1322b955c3a6b1abc9b",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-12",
+            "finding_sha256": "462743e16b0dfeb2b57a5fb548fbaa1770311b436ee89ffc43727d011e2b563d",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-13",
+            "finding_sha256": "707f1fd15c044f8ca0500da0df9f7de40ae7b48dad10803dab87673a0c3c53a1",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-14",
+            "finding_sha256": "670b3644cf1857526b808385ded109c67fa07019abfe76160ee9eb14ace07132",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-15",
+            "finding_sha256": "5eb5e14e0b41f150a570ea0acee28b7754b82c903630a3f36b51204bbaecc2b2",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-16",
+            "finding_sha256": "f44e62e280891450034dcdcc11b7567d609a887b5d0915a54f852f7e4471275e",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-17",
+            "finding_sha256": "697181e4dd5dbb2c62054df2ac3899e389ccf6f02a124b9d5cc292a40285ba16",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          },
+          {
+            "finding_id": "SYNTHETIC-F-18",
+            "finding_sha256": "1ec2d6502b14ee1f6e18d76214e38f26d142ad0a4c6188d67565f49e7cf3d3b2",
+            "result": "pass",
+            "reason": "合成 QC 收據，僅測門禁及輪數，沒有執行工程覆核"
+          }
+        ],
+        "receipt_sha256": "77a6670af53aabf30e458f922ea9dd67bdb7adcc44c9638685e74580ca6a7783"
+      }
+    ]
+  }
+}

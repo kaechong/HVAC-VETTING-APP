@@ -1,0 +1,761 @@
+{
+  "kind": "append-only-public-delivery-fix",
+  "repository": "kaechong/HVAC-VETTING-APP",
+  "branch": "handoff/visualfix-original-97-736dc2f4",
+  "parent_checked": "e394cb80bc71a91b54a5176fd0963fe4935cebd8",
+  "directory": "handoffs/deliveryfix-4bd29ecc",
+  "archive_sha256": "4bd29ecc64813be8a18ff87f9ede25d1226797574aa0625be2c0a98983af4e3a",
+  "scope": "Fixed offline source/tests, prior validated archive and verification evidence. Original 97 payload entries preserved at their existing paths. No main/PR/merge/deployment/settings changes.",
+  "files_excluding_this_manifest": [
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/DELIVERYFIX_RECEIPT.json",
+      "bytes": 24539,
+      "sha256": "ee45449e6547d9b5f7ac59656fcab3b6d2d77ddc0a1237eedb93672ccbb616a2",
+      "git_blob_sha": "0b26d9694bd5e353fa84b17e696359ccd64f4e7e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/FIX_FILES.sha256",
+      "bytes": 15304,
+      "sha256": "f6092649d4a64c5dd5ab7b6ae7f41041164fd4e8d7691bf2de46dae9f6c95ebf",
+      "git_blob_sha": "d3a426503b73d3543f6e7c543f48d3096169818e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/HVAC_VETTING_OFFLINE_DELIVERYFIX.zip",
+      "bytes": 1484549,
+      "sha256": "4bd29ecc64813be8a18ff87f9ede25d1226797574aa0625be2c0a98983af4e3a",
+      "git_blob_sha": "49b85b03d5912fc5d1e44c84c518342b23b4f4f2"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/HVAC_VETTING_OFFLINE_DELIVERYFIX.zip.sha256",
+      "bytes": 103,
+      "sha256": "dca1eff51244e74fbb084e2fb7bccd03b19dd57ee0a215f35db0f3025ed5074c",
+      "git_blob_sha": "3e8335b613ded33f233dcb0602b2ff4c90d7dd62"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/OFFLINE_DELIVERYFIX_HANDOFF.md",
+      "bytes": 7276,
+      "sha256": "486b523da9b58af1d61d5708aded7bf6d4d9618bb4d7fe4ea61be78e24561943",
+      "git_blob_sha": "02b3900458bf77e9c6ba1b3ebb51622032b50c57"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/PUBLICATION_SAFETY_REVIEW.json",
+      "bytes": 9394,
+      "sha256": "af5ad98b6f07885b48d1ff177d016c95c3c9148c1533f4be6d23edb74b05326b",
+      "git_blob_sha": "c543a26b6b4a145f72afe9ead474dd88e13bd401"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/ACTUAL_ORPHAN_RECOVERY.json",
+      "bytes": 1236,
+      "sha256": "56f690a3011aa34d070110b8a15bd6aacc20a1d67cbbabaadba13267bfa49f4f",
+      "git_blob_sha": "8fc4647b401119f7ea6662691aadf9489de75f9e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/ACTUAL_ORPHAN_RECOVERY_RECHECK.json",
+      "bytes": 1235,
+      "sha256": "60fb922c6fd8998ab5e186f668dce139a83235374c6ffa71cef8485f0b0ace5b",
+      "git_blob_sha": "1b8a388a8c5d68ae0f7ac20035b0cf58c84d33c6"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/BASELINE_DIFFERENCES.json",
+      "bytes": 752,
+      "sha256": "2eefffc2d2f9478fd8f70ce8831c534d10ef0ac2ad8358adc6bdd6fa3f2e15d8",
+      "git_blob_sha": "2ac0eb9c182c9d39b996e0735076c593fd6d6104"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/BASELINE_VERIFICATION.json",
+      "bytes": 16475,
+      "sha256": "7c034c37addb23aab9e5782dd5948b83a558c151441ce52905455e9d94b25bf9",
+      "git_blob_sha": "7a61f2fef06c586703d8c0f21bd20642db8370bf"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/CHANGES.diff",
+      "bytes": 20479,
+      "sha256": "b5076b9404f87ed80e6051c15530ef1721ae6772d9f3b95b09aabd0ec207060c",
+      "git_blob_sha": "7b35f9881b8f98cc7e6b6aba1142cae403f77c98"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/COMMANDS.md",
+      "bytes": 4120,
+      "sha256": "9b04eaab7a0a4d197b94790a28665a7493504fdbeebbc6353997ff2f6ee2152e",
+      "git_blob_sha": "198d8cd8ce3fefd582f821bab72d181c3910ba9c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/ORIGINALS_FINAL_RECHECK.json",
+      "bytes": 289,
+      "sha256": "d0e0834a49b5fda7de91d0e0b0a8668fcda811855e66ef9ed9de06bfd103c53a",
+      "git_blob_sha": "a6a7f0ddb6c32a537a1765f2c96e060a3ac14d9f"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/actual-orphan-recovery-recheck.log",
+      "bytes": 1235,
+      "sha256": "60fb922c6fd8998ab5e186f668dce139a83235374c6ffa71cef8485f0b0ace5b",
+      "git_blob_sha": "1b8a388a8c5d68ae0f7ac20035b0cf58c84d33c6"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/actual-orphan-recovery.log",
+      "bytes": 1236,
+      "sha256": "56f690a3011aa34d070110b8a15bd6aacc20a1d67cbbabaadba13267bfa49f4f",
+      "git_blob_sha": "8fc4647b401119f7ea6662691aadf9489de75f9e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/baseline-delivery.mjs",
+      "bytes": 10251,
+      "sha256": "6a4bd135629c7ab5a96e0fb405d8c74cfe457dfa1149176a02f3a2958c141053",
+      "git_blob_sha": "555c2a7beba5dcd6b9ef41202bfe5ba8576375e4"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/baseline-qc-ledger.mjs",
+      "bytes": 2953,
+      "sha256": "c73e7a6e9dd75d52e4171b473566e93931e9eaa70054b2a2f34929a37dbddc74",
+      "git_blob_sha": "30c411b45295840c518c73dbb119e083637df353"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/focused-final-r2.log",
+      "bytes": 1421,
+      "sha256": "d05d6db8546155b74ab4b1a37d6b46a183f61ba9d1428e5b3738ea43ae2582cd",
+      "git_blob_sha": "a3818e245f510004bb5378bad778c9037f4ced3f"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/focused-final.log",
+      "bytes": 1417,
+      "sha256": "66ca53349be2a21337079fe6bf4316997a45fa610dddb04e2f3b396d51dd0f6f",
+      "git_blob_sha": "ae01a16fd565800301a4e33f1669575a261de2f9"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/focused-first-fix.log",
+      "bytes": 527,
+      "sha256": "7076253533f2b5caaeb77be8e69bb40c0c46531ec733faab619921c4f759273e",
+      "git_blob_sha": "5165991c5822cad03b59a024a849f8449e0cdff5"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/full-offline-final-r2.log",
+      "bytes": 4635,
+      "sha256": "4f72aaa37d892adb3d9fbb216d5662a0c1587da5d51a8d019318c04fa35fe3e7",
+      "git_blob_sha": "cca85d216e519d40455a7eb368d81e6ea73f763f"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/full-offline-final.log",
+      "bytes": 4647,
+      "sha256": "1b2c2a118ee884c17d68912711092a2256d5c02f6975ad6c943b2b507a1a3444",
+      "git_blob_sha": "47f4a13f17d3a25d74b85f86ab7e26aabf528caa"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/independent-readback-final.json",
+      "bytes": 4000,
+      "sha256": "f1e9943e1f97321d19beb83b89d738bb1d6250360192a3e32c14d8bb4995bdd1",
+      "git_blob_sha": "692b161d552ae337ca1d8dde5b3b9aa30ee68cca"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/initial-failure-fixture/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/initial-failure-fixture/store/jobs/1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372/.write-3c3e75a7-0226-4b43-b166-797bbfae6400.tmp",
+      "bytes": 697,
+      "sha256": "17e8bea2463b1c72dd1edf181992ac5b72a5fe5e6660bbfe0aeae13095b0e889",
+      "git_blob_sha": "9b363ccda7175af01b8c703356b67c5ab0b571a1"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/initial-failure-fixture/store/jobs/1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372/gate.json",
+      "bytes": 4873,
+      "sha256": "4a56649852fa113da5716cde98a6e6bb7b43688268408b6dbfddf4fae17a5def",
+      "git_blob_sha": "e556416bdf089c19743afcd40aa1dfc053320d05"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/initial-failure-fixture/store/jobs/1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372/input.json",
+      "bytes": 16851,
+      "sha256": "786e4b8dfbf1499db798fb1db1ff82ff45f6a8a0e677f00b1039ecbbf08ac400",
+      "git_blob_sha": "e99b302e43aefa57c08ee7cc13e8f5e32cff1276"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/package-deliveryfix.py",
+      "bytes": 3159,
+      "sha256": "bc401552c0affcae1fc981ef3110994d88c375fdb41bfd1c7298de299719c2a2",
+      "git_blob_sha": "8b7a65c213d5d24ce5a7eb7ea8ad151e68985eff"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/reproduction-before-fix-confirmed.log",
+      "bytes": 3721,
+      "sha256": "a37a3ec6ca22590cca3de6c2ad19d6058750b4e0ee653271a891d2b32d8f1c2a",
+      "git_blob_sha": "c28739687e317e383b37b8e2a707883619d35f2a"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/reproduction-before-fix.log",
+      "bytes": 3319,
+      "sha256": "9a929cd70a81626f2739505a27c5fa1137385c313ef3a4b02eb61a59e70e2cb3",
+      "git_blob_sha": "29c110c57b7252962451ca3f0370caf101b62083"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/reproduction-tests-before-fix.mjs",
+      "bytes": 4073,
+      "sha256": "2200a94ba4bd8e000a73b05828f4aa3c36e2776ad375ab390d074e804ac3ccb8",
+      "git_blob_sha": "ed3beca5ade4eac96978572b9a8cc7e86cbbcc19"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/samples-final.log",
+      "bytes": 6676,
+      "sha256": "ae94e02bd5771422f05ff27480204d8a63303a09c25c3773ad651556bb7128ff",
+      "git_blob_sha": "cee3216d8c319a787d0b76fd9cfc2e0e8beb1e14"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/evidence/verify-original-orphan.mjs",
+      "bytes": 2266,
+      "sha256": "980aff30fc1f6897639ef75a5651fefa65987ddd06df92d98e2b1f90cec11213",
+      "git_blob_sha": "f2050cd3168633e013fe139365e4672bfcb9b78f"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/EXPECTED_REPORTS.json",
+      "bytes": 565,
+      "sha256": "c47bc56a56b8a52e6c04da0bc40004db4dae6237b7d1c944977be77fcc48ba98",
+      "git_blob_sha": "38f049b7210beb450f94a0ae0533459bb01c1c83"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/FILES.sha256",
+      "bytes": 10043,
+      "sha256": "f003095cbc3ee57a74c19b4cbb69c442b2361d949b3c367d4dd58fcbb36ac948",
+      "git_blob_sha": "73d47dcf1474fb9ac64f1cf79f54d6083781a00b"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/README_LITE.md",
+      "bytes": 4218,
+      "sha256": "21a7b81bfd53f81c3025d1cda5627a9907a535863dcedcfac4ed73d5afdddd47",
+      "git_blob_sha": "b2f65df1e5ce2bfd1b458cf5c261eab6c571a39c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/.gitignore",
+      "bytes": 411,
+      "sha256": "e2dafde138170808504ce71addb39313539a20f2bdad74d1e95271ddceae92bd",
+      "git_blob_sha": "26b4ca7aebad458b7927b3624a17355cb6bd6796"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/AGENTS.md",
+      "bytes": 1715,
+      "sha256": "fc1443162f10b1a7e7c57f1d3615db24ecf1a36088fed1d57b7d4bd935c7aa3e",
+      "git_blob_sha": "e8399df91b098c3e0304639458cec48e3091d3de"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/MANIFEST.sha256",
+      "bytes": 1784,
+      "sha256": "d086d16a25f702644b1f71d9ccef77edb69df696fcece5b80efc4b9d17d10322",
+      "git_blob_sha": "95ad68510a054429544318f27ebe1456a28598bc"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/README.md",
+      "bytes": 2326,
+      "sha256": "4c7f173f81c53ac093567d3ff178e50a3852924f42209f7eff8de2bae0cfa533",
+      "git_blob_sha": "b8cd8f622a90a864e2faf0857e7deec677cdc13c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/SECURITY.md",
+      "bytes": 1024,
+      "sha256": "f9973f8b4679b92c2b01dc764e4e431ffdc781ed22771a3f5f74620e3df40b18",
+      "git_blob_sha": "b32f476c7276b23b7bd379c3cc33eb4d200ad59c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/SOURCE_INDEX.md",
+      "bytes": 3718,
+      "sha256": "e7bdce26abd7432fcf67b84293d982c1cc6ecbde43dff69aebbcbdcc199e2cad",
+      "git_blob_sha": "dd8d7777195625256c08f70ab7ca2d8084533b4b"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/docs/ACCEPTANCE_PLAN.md",
+      "bytes": 2195,
+      "sha256": "f245afdb9e797584d0c55f211e609b6e547441eab42157c9a57aabe246da8a94",
+      "git_blob_sha": "ad63a3fe0cdac523cd14d930a5dd9da90836ad12"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/docs/IMPLEMENTATION_BACKLOG.md",
+      "bytes": 1513,
+      "sha256": "9ef128360410f9e06eacf124d74cbd3e1c8651a17e1651d6ce069038cdef5002",
+      "git_blob_sha": "e3e22a3615d225618bb9d978e7015e6bd38065e7"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/docs/INTEGRATED_PLAN_20261007.docx",
+      "bytes": 53794,
+      "sha256": "aded9f0403a785ca6b4507e1afb0ea020c0862601d15aebb856f1d06e73e17c5",
+      "git_blob_sha": "d1397cada40705fe127501194da80d8ea4c3744b"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/docs/INTEGRATED_PLAN_20261007.md",
+      "bytes": 26679,
+      "sha256": "5c7ffa7eaca67ae8d96338864f3e5c38a91374e2fee4f755aede35ad74418730",
+      "git_blob_sha": "1ecd692be79e6176ce7a20d5850d6355ca5ffc8a"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/docs/REUSE_BASELINE.md",
+      "bytes": 1537,
+      "sha256": "b1a402c93e712f9f7f6808e6658f0aa38a8329b1b7d12b0732dfcf1a0fe63614",
+      "git_blob_sha": "c73b99b53a4da22f0c180eb84637ec7470fef638"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/docs/SOURCE_CONFLICTS.md",
+      "bytes": 1690,
+      "sha256": "59a3ceaf61612dfe0a41c9a85c89bb50484c542ce8cef06491010e694f3dae37",
+      "git_blob_sha": "4d25419555c2da3eb1bc52b8641f2622b2bdcf26"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/references/drive/ARCHITECTURE.md",
+      "bytes": 16312,
+      "sha256": "0caf5224d7641fadaf10a0b9ae23b5f387ecc936fcdd79dfb8142ab7d8524ab5",
+      "git_blob_sha": "7076f0c369c4388b3e51dc799e8035a6534e64fd"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/references/drive/Audit_SOP.md",
+      "bytes": 4036,
+      "sha256": "9e5f982f329d7ad61915d12ccf63e76e3e3b932b2e8bee9e8180f189a34aecd2",
+      "git_blob_sha": "7bd5ba89782ffab7a227172b4e9c29798a2097ba"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/references/drive/README.md",
+      "bytes": 470,
+      "sha256": "4128e7727983c87fdffa9420a6a9a8cd6fcf86536734260bd79d5a36dc6163ad",
+      "git_blob_sha": "0c4a926a57716653a7cdf250d249a8e424b76d65"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/references/drive/Vetting_Report_Spec.md",
+      "bytes": 5719,
+      "sha256": "4fb21c8550a35ff9270bffcd8fb3da3ac1080dff225c5962cf1c36339ca0f334",
+      "git_blob_sha": "6574ffc90aa490655da8ce7c9400aa9ce4d5bb1a"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/references/drive/Workflow_SOP.md",
+      "bytes": 6655,
+      "sha256": "7b1d3686a5d68f83cbb8c1da0bef24f077d068b566d8230f8a1d53a6b06f8581",
+      "git_blob_sha": "3badc7fb858afeb1144677b7558f6dcfacfc46cf"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/requirements/SCOPE_AND_CONTRACTS.md",
+      "bytes": 2433,
+      "sha256": "6524dacfc4013f50dd7c7d10d07cd98676f535c079f1696519bb9601d4ba8021",
+      "git_blob_sha": "6178d21cfabe68cc03ce0cbf0c540de3a2a16617"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/requirements/checklist_24_source_snapshot.json",
+      "bytes": 15584,
+      "sha256": "507813e12050b90d6b46d216a18214283a8a7d9f51ea83a7e17f8b119e8bfaeb",
+      "git_blob_sha": "a34678ae6536dc5608b9dcd3bd15de64c8aea4e5"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/baseline/plan/templates/HVAC_VETTING_CHECKLIST_MOTHER_20261007.xlsx",
+      "bytes": 56619,
+      "sha256": "e968805be7b0e57f94c2a3e391c495f25730c55b9800123b15a6bf8900d56efd",
+      "git_blob_sha": "d34568377f6fadf257ff9e7c3a89898a365ca7d7"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/.gitignore",
+      "bytes": 27,
+      "sha256": "e7aa57722bf88d140689eabebfa9669ce076502f69a523f9bbb9017efef05571",
+      "git_blob_sha": "edaf13d65f0a5ac213f8065790c714e35e7c6849"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/cli.mjs",
+      "bytes": 1467,
+      "sha256": "43cca43f775559bb663c69cd3ac4d0d037afd91c8ea1564555ce9933d47654f8",
+      "git_blob_sha": "fd1781ff5737e101ff9813806357740ac9e492a2"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/finding.schema.json",
+      "bytes": 1570,
+      "sha256": "403d1dcf9efff096fc2170669ae99531a3e423f01ba2dcd6d58c3ab0d324ce63",
+      "git_blob_sha": "e83c1c56d5e1b09f589f30491075df44caa5346c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/lib/common.mjs",
+      "bytes": 975,
+      "sha256": "7dacfa8894f222c5897ba90b7def4f48a709d874945f8714405592eb4eb87f00",
+      "git_blob_sha": "ee74b87adcbcd26a1a0cd80996becbfbf3915283"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/lib/contract.mjs",
+      "bytes": 12298,
+      "sha256": "8f1f6a94451c2bfeb24baf7a9ded00267a6b8a27c6ee47cbf6b48751ad1306c1",
+      "git_blob_sha": "5b79da8ebeb17f930614f9411ea19987896a96f1"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/lib/delivery.mjs",
+      "bytes": 11992,
+      "sha256": "a51d3ed1c7180e910eee46c3cfc952887bc224731358bb5eaceca8421c2f86da",
+      "git_blob_sha": "370566554188cf2b4680e62c57574ab2d410152c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/lib/mother-renderer.mjs",
+      "bytes": 9632,
+      "sha256": "f8d7f2fbb650f9901e9e612cfccf59363d2e8af94695ee8cdb991c33ad80f697",
+      "git_blob_sha": "d7e0984bf4d84d1078277325690ec41d68c9c034"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/lib/qc-ledger.mjs",
+      "bytes": 3518,
+      "sha256": "e22156892887316c8235ac9819e10ff27a38286dc095927071219af33f40875b",
+      "git_blob_sha": "195f38dbcdcae1d12d9b2b54c53926f16c29afff"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/package-lock.json",
+      "bytes": 42261,
+      "sha256": "7e97004d8ff582ac84190325e640c3ab668a8d45cefd6f873cd020da0844632c",
+      "git_blob_sha": "8bfa6c5a3250bc322fb8fb2cdfcb654959f31ae5"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/package.json",
+      "bytes": 373,
+      "sha256": "0ff7a0e53a6e974f0ab46891929bfbb72cf5326171d1b6e8bd5b1e512f289f5f",
+      "git_blob_sha": "f7cfaef2980feba8b571b47f94245cc1927a5eb8"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/scripts/make-samples.mjs",
+      "bytes": 4047,
+      "sha256": "805e7f2e817a853bf357782f4d439437af553cc3c5b77d720c847b520e26dba5",
+      "git_blob_sha": "44db7492731f2dcaf0fb539ee550b54c362e680e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/scripts/render-visual-evidence.py",
+      "bytes": 1287,
+      "sha256": "51d56d577104040ef08080adf43c0a791517f82a4addf043a24473a4af0392ad",
+      "git_blob_sha": "8ae0b61d35722e12fb328bc9b060f2f1be7c2fb4"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/scripts/verify-artifacts.py",
+      "bytes": 4342,
+      "sha256": "1cd1eeae51ac6624d1464b9acd6a09f6ecc2b42a983664f522943f1d71a7da2d",
+      "git_blob_sha": "15b75f361692ea8d8b6c4f1ec6e44c5d430cb7dd"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/scripts/verify-rendered-pdf.py",
+      "bytes": 2233,
+      "sha256": "72b7ed82cb25db17a8fdbcefb742cfb1867cd6543e696e883b84ff21d703b414",
+      "git_blob_sha": "df0b45fd3e7f034be6a824e5c73b2d1a6deb0040"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/test/delivery-recovery.test.mjs",
+      "bytes": 12300,
+      "sha256": "3f3525f1fa571998b0ee6d64cd17c50723f4d08b2f5671363982e4fcffcdad72",
+      "git_blob_sha": "52b238ecb9efc8fbf1504a8158ea84eebb54c486"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/test/fixture.mjs",
+      "bytes": 3616,
+      "sha256": "52d248af6676911170c65f77c320bc87871c174bd01b4d53c1d2d7ada2cf8408",
+      "git_blob_sha": "84dfef30026dec7042b73ec68f2e2c5f86639ba6"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/test/offline.test.mjs",
+      "bytes": 15358,
+      "sha256": "c4cb2b8f451764fa234356c92c0e7efdcfd1ef515f569aa0351d11eb47d09003",
+      "git_blob_sha": "fc3e0648c39ad5540392c9d93b89d45e870a0cc5"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/development/offline/test/qc-revision.test.mjs",
+      "bytes": 8672,
+      "sha256": "ad546af52b07027058acc1c49eb1563c37ee9835c16b9f4da2d83a67b847f913",
+      "git_blob_sha": "69af408906cbfb73a8a8a082133016f46788bf0b"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/QC_FIX.diff",
+      "bytes": 33343,
+      "sha256": "545ef4d75d4daced758275dd2c0c961e9ffd39e0d96db0c97ca52bfc46e210d5",
+      "git_blob_sha": "79c97285a8a53c4598bd71c5c6a6664393558197"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/QC_FIX_RESULTS.json",
+      "bytes": 2474,
+      "sha256": "d07c787af964bf2eb3aae3a004da08c3c87ba53d3f78d8f138818e32180b222b",
+      "git_blob_sha": "cea619e71252656e8d3e8c01a69e0960e4a8a480"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/SOURCE_PROVENANCE.json",
+      "bytes": 22686,
+      "sha256": "b80a3b49ef51df648a4658f69a3226791c5fbb300e884b2adf39e8d495e87043",
+      "git_blob_sha": "a51b91f38e936cab6e8affee355b7876982e88e8"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/qc-revision-before.log",
+      "bytes": 8540,
+      "sha256": "60352508b913336086c716f040aa1ea7e2cfe53cbd2f8ca27ad2481e01b19027",
+      "git_blob_sha": "28a79bee60cae0298bb53e66c196c6b196b11b3c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/PRESERVATION_VERIFIED.json",
+      "bytes": 2683,
+      "sha256": "23c5a71657cefcf8f3c99df54c0c54f3d730f879c2cfd46fe2d50a4656d70280",
+      "git_blob_sha": "e46f1b7af700ef89271cb01b939da18a0066ca3e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/RENDER_INPUTS.json",
+      "bytes": 2848,
+      "sha256": "d859177b01b7bcf39986fa96e8530307d72bb5481a446d77830ef82f79d96e64",
+      "git_blob_sha": "8e359663a1c834cd81044c991d7d5b64f20e4e21"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/RENDER_READBACK.json",
+      "bytes": 15931,
+      "sha256": "03b27bfe051f8f3e1d09fec58702ec383cb1ebb9a726efa03cc9208abf64e4c7",
+      "git_blob_sha": "5ba25505520873fcb6ecc78b56f037b1d921a851"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/TOOL_VERSIONS.json",
+      "bytes": 304,
+      "sha256": "7d502e6cc8bd518bbf78ac8f17404c79c98e26b7bc8acbc7ea8dc8559a4f89d9",
+      "git_blob_sha": "f2406c8ab05758c7aa11742838545680f2e5d93f"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/VISUAL_FIX.diff",
+      "bytes": 8034,
+      "sha256": "81c8898d3cee86d9ad8c388cb21644d15880c76429f83703fa6dbebd0cd3baeb",
+      "git_blob_sha": "aa9e023b7008bbf06df4ced009d00060d03ed8f1"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/VISUAL_REVIEW.md",
+      "bytes": 2259,
+      "sha256": "bf59329f6b4812ac10bb2dd4a1cec3e56a2d88f4fdb13e4ba4165c3edc3f130c",
+      "git_blob_sha": "bbc5701e5134bc23b24cbcb2a3b1df219fc8b802"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/before-long-18.xlsx",
+      "bytes": 70169,
+      "sha256": "2731697bbcee414be9a4919777621c6f809c931a2dcabe489197705b4b96043f",
+      "git_blob_sha": "dbed005504f5865d3af4da2dcd5e1e1927b8537e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/long-before-after-preview.png",
+      "bytes": 190771,
+      "sha256": "3005fa11c85a30c0703f25008bd86c7871758b0ae7ce7d2567ada13ac5e18d4b",
+      "git_blob_sha": "1e51f89bfec83ad4fa4330119cceea7b416c155e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/mother-normal-zero-preview.png",
+      "bytes": 101106,
+      "sha256": "854bdf3bbd880cacde7912ad5c28fcf3b514306d5a3f161a1852f13ffd44cf69",
+      "git_blob_sha": "109c056b0223e3d4fd2c0d254ec98a6336134654"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/offline-tests-after-final-source.log",
+      "bytes": 3340,
+      "sha256": "00231b3be288a1c2de3d5862f41360a54be35bd1e9944f78218e9056fc51f535",
+      "git_blob_sha": "c92639deca74632fd008c45c41384738dbcb66c4"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/offline-tests-verification.log",
+      "bytes": 3331,
+      "sha256": "64f6ea61d4ba125b0d6738cc844797451ad2553220a8ddacc0ae39244cd52375",
+      "git_blob_sha": "798c40d7dcfa5aead92a0d2ba8fa9d671a24b694"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/pdf/long-18/report-v1.0.pdf",
+      "bytes": 267730,
+      "sha256": "53d5ade887593df55bad68f00a2168c2aecce9818b3ea8fcf5796151441f0f50",
+      "git_blob_sha": "692c3fdbb9764d4993a31cd6c00e2bca93c3ebef"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/pdf-after/CONVERSION_LOG.json",
+      "bytes": 3487,
+      "sha256": "5ffbe2946f74b7066154453936e529a1e566eb52ddc42f1e824a3eb39560fb8a",
+      "git_blob_sha": "7e4f103a91f3feff504dbc8ce0c2713908263561"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/pdf-after/long-18/report-v1.0.pdf",
+      "bytes": 267509,
+      "sha256": "b69fab73b66ce2e4ea302b95bfad68e608893483f92268392a030e23bd6bd43c",
+      "git_blob_sha": "e06d578b92a9178f05ebdd3ca832f183464c5822"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/pdf-after/mother/HVAC_VETTING_CHECKLIST_MOTHER_20261007.pdf",
+      "bytes": 211867,
+      "sha256": "2861e499706cda40bca5e1c0bf3678a02a41ee7b0528c0b48a31f173ce6501d8",
+      "git_blob_sha": "a321abafd750ecbf07d182e5a7cbfaa0b0b7b778"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/pdf-after/normal/report-v1.0.pdf",
+      "bytes": 218697,
+      "sha256": "decab09565c6a274f6d89b6841c2ef8405638448b2d8b0d68184d77448de0e66",
+      "git_blob_sha": "50970c4ba16ef3208689228c9e606975f35cb4c1"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/pdf-after/zero/report-v1.0.pdf",
+      "bytes": 212064,
+      "sha256": "046854b7006b1e9376d1d68e842c9d2b30ccc8bddc787d4f0dc507cd1b33fba2",
+      "git_blob_sha": "584a112bc1f5fcfab21397eb8db44c9dee4fbab9"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/rendered-after-regression.json",
+      "bytes": 1355,
+      "sha256": "8bebe018afb622de16e9e0d8eb2b68f35a038e166c880e2c4eecace91acfe67a",
+      "git_blob_sha": "0a1ba9b98528007a7dbc9a82d6f79f6dc73ff3ca"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/rendered-after-regression.log",
+      "bytes": 864,
+      "sha256": "f6e3b6322e98a7e11df58c4982e44270e8ae24a9f86a0a188059f6ca5b6c88a4",
+      "git_blob_sha": "c457ac42d2cfda4f9f0fdb88b4c3797c26c3b150"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/rendered-before-regression.log",
+      "bytes": 322,
+      "sha256": "f0ba245f047d1ebc654289753241d5a28b009d2dd8da8979429b1887d334d3af",
+      "git_blob_sha": "0b936947512ddff6be3fdf35f1bb99740fac6bc7"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/sample-generation-after-height-fix-retry.log",
+      "bytes": 6076,
+      "sha256": "62dc7fdbdc490d9eb3bbac038e84454d8adf3a6ef1f12ec01e6f74f3962bc0b7",
+      "git_blob_sha": "a866e94cf4ee87a8978be91feca19b85a9ec354d"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/sample-generation-after-height-fix.log",
+      "bytes": 5187,
+      "sha256": "57f5a6277abb1fd79c11fd1bd49d0efee80a7d4fb9b9635d70765ce138ae0a7d",
+      "git_blob_sha": "b3032d8f0a0ba789641e62837e753d06e3830259"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/sample-readback-after-height-fix-final.json",
+      "bytes": 4000,
+      "sha256": "f1e9943e1f97321d19beb83b89d738bb1d6250360192a3e32c14d8bb4995bdd1",
+      "git_blob_sha": "692b161d552ae337ca1d8dde5b3b9aa30ee68cca"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/sample-readback-verification.json",
+      "bytes": 4000,
+      "sha256": "6a2435285818e4829181c83960211ea0bfa29bfc7d6208748fe56e3e1bfd295b",
+      "git_blob_sha": "a24f451a8c56c49f7e4242649ce3ebf0f7512de5"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/source-before/lib/mother-renderer.mjs",
+      "bytes": 9596,
+      "sha256": "f92976319853a829d90ac38f9a26c69b9fe01e392aa0f99571c0303a2623aeaf",
+      "git_blob_sha": "83fe64b2dd87df2921c9a00b9e6a7f1e37d119ce"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/source-before/scripts/make-samples.mjs",
+      "bytes": 4118,
+      "sha256": "692c86dcbe9f265a9a5ac63d5b3232ed31c5983df2b5fdf1c7adf1ef05874c96",
+      "git_blob_sha": "0b1b3ca9fbad8c84569269fce27fac05324a297d"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/evidence/visual-lite-r1/source-before/scripts/verify-artifacts.py",
+      "bytes": 4342,
+      "sha256": "50c5bee528072cdf459bd1c530f656b07cb622dce78e8d93d4a98d379409433f",
+      "git_blob_sha": "db14c5db3e64cc2ef62bdfa0831d5a0b82f0d86a"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/long-18/input.json",
+      "bytes": 85648,
+      "sha256": "27a544a57d14fbe6ca844ab12ca49e09e63e01c1d6441130c749263eea9f7c34",
+      "git_blob_sha": "ee3cc824a66a305f74001e38f38754fb45d54b60"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/long-18/report-v1.0.xlsx",
+      "bytes": 70169,
+      "sha256": "418f63b53aa7f5dde17212dddb0c79c2d7140a7003b2617e4de4abde6cc49f2e",
+      "git_blob_sha": "adb2ea9213680386d6b3c315f453f395b704d194"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/long-18/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/malicious-text/input.json",
+      "bytes": 18549,
+      "sha256": "a74d55063af50a61d122c34a7d124da1398d4a46cff2657185805b406a0f0f6e",
+      "git_blob_sha": "139cfa54d29171aa02dd17804199a75f93215ff6"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/malicious-text/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/normal/input.json",
+      "bytes": 18571,
+      "sha256": "8a9084db1805c3dfc7cb6a217a6c0162ed289de9918be878dc3a0598b2851cdc",
+      "git_blob_sha": "7fe34da75447bda1d1c2602580b4361e0ef0613b"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/normal/reissue-input.json",
+      "bytes": 18571,
+      "sha256": "f1f0e4ff04e0fdf12c3bd1a941707c48f2ca66ce38a7205e129caf3d67a932f2",
+      "git_blob_sha": "bf1cb7b82cedf501a9b41b7a41ef1ba28248d2cb"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/normal/report-v1.0.xlsx",
+      "bytes": 69798,
+      "sha256": "6151835582d3ec5abe714378e0490501d75cd2d5b3fd2c677b64eb056bcdc06f",
+      "git_blob_sha": "00253a14b765750ce93fe8757759520e19e0f4cd"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/normal/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/qc-real-revision/input.json",
+      "bytes": 26361,
+      "sha256": "0cf0f839d6a17b94af8845880ef3167169ce68418cfc543317c20bebe9fb33c9",
+      "git_blob_sha": "114e440cbf4eec7365355d5b9196df3f5425c613"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/qc-real-revision/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/qc-three-stop/input.json",
+      "bytes": 35939,
+      "sha256": "ff3287c81e46e356086da708b2b1c26e872333904c5eb7806fc866c9c298608d",
+      "git_blob_sha": "a5606de164c8f94ab5e362f1415abf9d1f237400"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/qc-three-stop/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/recovery/input.json",
+      "bytes": 18571,
+      "sha256": "abf6d666f5bcd3d62aa56b9403f9972485782bbb8712a2f823be391bf0ba6f46",
+      "git_blob_sha": "716b14be7024311d60142073e437fb2cd227dc0c"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/recovery/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/unknown-source/input.json",
+      "bytes": 18635,
+      "sha256": "b6f301344c9be219903e880d9049c20027cf33fbfbd0dd301b68accddaaf8f5c",
+      "git_blob_sha": "cdde9269f87add9bcb21b234609e5d855113f64e"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/unknown-source/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/zero/input.json",
+      "bytes": 15143,
+      "sha256": "7f760677e27dfde2cd157dda8481add1f69b94f8014b6bb00aea2d35021fbe9e",
+      "git_blob_sha": "9e06c9e4f6d8ab82daf7ac203ae96a26a5b750aa"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/zero/report-v1.0.xlsx",
+      "bytes": 69640,
+      "sha256": "29b8ee23b144e95c92e48d31b029319f11473c671929fb8db320548cce431e2c",
+      "git_blob_sha": "f1e64c472bb9b7075d49ff202073102a8d90a9e0"
+    },
+    {
+      "path": "handoffs/deliveryfix-4bd29ecc/hvac-vetting-offline/samples/final-r3/zero/sources/SYNTHETIC-source.txt",
+      "bytes": 116,
+      "sha256": "40c767e6eabdbcf12ed90705eeb3ed8a72baf2cb9d0dab57f1866d376f72339d",
+      "git_blob_sha": "1b1fe3c991a4980e22db7de3b99d5f92edbe4946"
+    }
+  ]
+}

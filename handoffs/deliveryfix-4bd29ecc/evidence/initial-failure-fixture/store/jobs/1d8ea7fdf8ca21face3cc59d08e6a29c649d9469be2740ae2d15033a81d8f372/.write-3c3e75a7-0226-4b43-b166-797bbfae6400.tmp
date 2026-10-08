@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1",
+  "job_id": "1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372",
+  "owner_id": "SYNTHETIC-OWNER",
+  "project_id": "SYNTHETIC-PROJECT",
+  "review_id": "SYNTHETIC-REVIEW-8bbb7606bfe7f68a",
+  "report_event_id": "SYNTHETIC-EXPORT-1",
+  "payload_sha256": "359739357966fabc7a55dee29f0d634c57ccc7248821b6124cf5da3434516ebe",
+  "gate_sha256": "8d828c05d0fcc62d04c73e06b884a8d0ba8e68ef41deea404e7615b59e48ecb4",
+  "version": "1.0",
+  "filename": "合成離線驗收專案_20261007_v1.0.xlsx",
+  "status": "reserved",
+  "delivered_path": "reports/b4d34a514a8d8312d1d04948b00301ec84d045653561df8afb42791806287bce/1.0/合成離線驗收專案_20261007_v1.0.xlsx"
+}

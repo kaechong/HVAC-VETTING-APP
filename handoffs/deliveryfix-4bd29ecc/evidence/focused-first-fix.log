@@ -1,0 +1,11 @@
+✔ historical replay: deliver A, genuinely revise Finding and deliver B, exact A remains idempotent (911.117944ms)
+RECOVERY versions: { unrelated: '1.0', retry: '2.0' } fixture: /workspace/hvac-vetting-deliveryfix-h12ua0yl/hvac-vetting-offline/development/offline/test-output/delivery-recovery-x9g9B2
+✔ initialization failure: retained evidence does not block an unrelated event or exact retry (672.201708ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2143.50315

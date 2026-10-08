@@ -1,0 +1,19 @@
+✔ historical replay: deliver A, genuinely revise Finding and deliver B, exact A remains idempotent (1284.967733ms)
+RECOVERY versions: { unrelated: '1.0', retry: '2.0' } fixture: /workspace/hvac-vetting-deliveryfix-h12ua0yl/hvac-vetting-offline/development/offline/test-output/delivery-recovery-1lyvYH
+✔ initialization failure: retained evidence does not block an unrelated event or exact retry (1218.434201ms)
+✔ replay guards: shorter history cannot start a new event, change store, clear rounds, or change completed payload (1367.296801ms)
+✔ replay validates the whole persisted ledger, including a tampered later receipt (907.527292ms)
+✔ three-round budget survives historical replay; a fourth round and shorter new work remain rejected (1495.867459ms)
+✔ replay still checks source bytes and the saved immutable input/gate (454.550977ms)
+✔ unfinished reserved delivery cannot use the completed historical replay exception (260.032554ms)
+✔ published reservation survives input-write ENOSPC: unrelated gets 2.0 and retry keeps 1.0 without duplication (605.232668ms)
+✔ legacy pre-journal orphan is retained byte-for-byte; unrelated and retry get unique versions (613.694262ms)
+✔ missing journal with artifact evidence is rejected rather than silently hidden or replaced (69.120178ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8974.496828

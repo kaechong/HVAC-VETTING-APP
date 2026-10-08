@@ -1,0 +1,114 @@
+--- a/offline/lib/mother-renderer.mjs
++++ b/offline/lib/mother-renderer.mjs
+@@ -43,12 +43,12 @@
+   return {xml: original.replace(section[0], updated), title: count, body: count + 1, number: count + 2};
+ }
+ 
+-function estimatedHeight(values, widths, fontSize = 10, minimum = 15.75) {
++function estimatedHeight(values, widths, fontSize = 11, minimum = 15.75, lineHeight = fontSize * 1.5) {
+   const lines = values.map((v, i) => String(v ?? '').split('\n').reduce((total, line) => {
+     const units = Array.from(line).reduce((n, c) => n + (c === '\t' ? 4 : c.codePointAt(0) > 255 ? 2 : 1), 0);
+     return total + Math.max(1, Math.ceil(units / Math.max(1, widths[i] - 2)));
+   }, 0));
+-  const height = Math.max(minimum, ...lines.map(n => n * (fontSize + 3) + 4));
++  const height = Math.max(minimum, ...lines.map(n => n * lineHeight + 4));
+   ensure(height <= 409.5, 'ROW_HEIGHT_LIMIT', 'Estimated wrapped row exceeds Excel row-height limit; keep input and shorten only after review.');
+   return height;
+ }
+@@ -90,7 +90,7 @@
+   for (const [i, title] of titles.entries()) {
+     ensure(typeof title === 'string', 'INVALID_RENDER_VALUE');
+     report.getCell(i + 1, 1).value = title;
+-    report.getRow(i + 1).height = estimatedHeight([title], [widths.reduce((a,b) => a+b, 0)], 14);
++    report.getRow(i + 1).height = estimatedHeight([title], [widths.reduce((a,b) => a+b, 0)], 14, 15.75, 17);
+   }
+   // Provisional: retain fifteen reserved numbered rows. They are not Finding records.
+   const dataRows = Math.max(15, accepted.length);
+--- a/offline/scripts/make-samples.mjs
++++ b/offline/scripts/make-samples.mjs
+@@ -2,10 +2,9 @@
+ import {join} from 'node:path';
+ import {makeFixture, signSyntheticQc} from '../test/fixture.mjs';
+ import {main} from '../cli.mjs';
+-import {sealQcRound} from '../lib/contract.mjs';
+-import {recordQcRound} from '../lib/qc-ledger.mjs';
++import {sealQcRound, appendQcRound} from '../lib/contract.mjs';
+ 
+-const root = new URL('../../../samples/final-r2/', import.meta.url).pathname;
++const root = new URL('../../../samples/final-r3/', import.meta.url).pathname;
+ await mkdir(root, {recursive: true});
+ const cases = [
+   {id:'normal', options:{count:2,name:'SYNTHETIC_正常四欄'}},
+@@ -24,7 +23,7 @@
+   if(c.id==='unknown-source'){input.findings[0].evidence_ids=['MISSING-EVIDENCE'];input.findings[0].primary_evidence_id='MISSING-EVIDENCE';signSyntheticQc(input);}
+   if(c.id==='malicious-text'){input.evidence[0].drawing_id='=1+1';input.findings[0].description='=HYPERLINK("https://attacker.invalid","合成惡意文字")；';input.findings[1].description='</c><f>SUM(1,2)</f><c>\n@SUM(A1:A2)；';signSyntheticQc(input);}
+   if(c.id==='qc-three-stop')signSyntheticQc(input,['fail','fail','fail']);
+-  if(c.id==='qc-real-revision'){try{Object.assign(input,JSON.parse(await readFile(inputPath,'utf8')));}catch(e){if(e.code!=='ENOENT')throw e;input.qc.rounds=[];let revised=await recordQcRound({input,round:sealQcRound(input,'fail','SYNTHETIC-QC-1')});revised.findings[0].description='真正修正後的離線合成內容；';revised=await recordQcRound({input:revised,round:sealQcRound(revised,'pass','SYNTHETIC-QC-2')});Object.assign(input,revised);}}
++  if(c.id==='qc-real-revision'){try{Object.assign(input,JSON.parse(await readFile(inputPath,'utf8')));}catch(e){if(e.code!=='ENOENT')throw e;input.qc.rounds=[];let revised=appendQcRound(input,sealQcRound(input,'fail','SYNTHETIC-QC-1'));revised.findings[0].description='真正修正後的離線合成內容；';revised=appendQcRound(revised,sealQcRound(revised,'pass','SYNTHETIC-QC-2'));Object.assign(input,revised);}}
+   await writeFile(inputPath,JSON.stringify(input,null,2)+'\n');
+   const args=['--input',inputPath,'--sources',sources,'--store',store];
+   if(c.id==='recovery'){
+--- a/offline/scripts/verify-artifacts.py
++++ b/offline/scripts/verify-artifacts.py
+@@ -14,7 +14,7 @@
+ with zipfile.ZipFile(MOTHER) as z:
+     original_parts = {p: z.read(p) for p in z.namelist()}
+ original = openpyxl.load_workbook(MOTHER)
+-manifest = json.loads((ROOT / 'samples/final-r2/SAMPLE_MANIFEST.json').read_text())
++manifest = json.loads((ROOT / 'samples/final-r3/SAMPLE_MANIFEST.json').read_text())
+ results = []
+ for sample in manifest['samples']:
+     deliveries = [sample] + ([sample['reissue']] if sample.get('reissue') else [])
+--- /dev/null
++++ b/offline/scripts/render-visual-evidence.py
+@@ -0,0 +1,17 @@
++"""Use an already-installed LibreOffice; never install or change workbook bytes."""
++from pathlib import Path
++import subprocess, argparse, json, hashlib
++ROOT=Path(__file__).resolve().parents[3]
++p=argparse.ArgumentParser();p.add_argument('--out',required=True);args=p.parse_args()
++out=Path(args.out).resolve();out.mkdir(parents=True,exist_ok=False)
++inputs={'mother':ROOT/'baseline/plan/templates/HVAC_VETTING_CHECKLIST_MOTHER_20261007.xlsx',**{case:ROOT/'samples/final-r3'/case/'report-v1.0.xlsx' for case in ['normal','zero','long-18']}}
++results=[]
++for case,path in inputs.items():
++    target=out/case;target.mkdir();original=path.read_bytes()
++    cmd=['soffice','-env:UserInstallation='+(out/'lo-profile').as_uri(),'--headless','--convert-to','pdf:calc_pdf_Export','--outdir',str(target),str(path)]
++    run=subprocess.run(cmd,capture_output=True,text=True,timeout=55)
++    result={'case':case,'input_sha256':hashlib.sha256(original).hexdigest(),'command':cmd,'returncode':run.returncode,'stdout':run.stdout,'stderr':run.stderr}
++    assert path.read_bytes()==original
++    assert run.returncode==0 and (target/(path.stem+'.pdf')).is_file(),result
++    results.append(result);print(case,flush=True)
++(out/'CONVERSION_LOG.json').write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
+--- /dev/null
++++ b/offline/scripts/verify-rendered-pdf.py
+@@ -0,0 +1,30 @@
++"""Regression: actual rendered PDF must contain every complete Finding with exact counts.
++Text checks supplement screenshots; they are not a substitute for viewing the pages.
++"""
++from pathlib import Path
++from collections import Counter
++import argparse,json,hashlib
++import fitz
++ROOT=Path(__file__).resolve().parents[3]
++p=argparse.ArgumentParser();p.add_argument('--pdf-root',required=True);p.add_argument('--output',required=True);a=p.parse_args()
++root=Path(a.pdf_root);results=[]
++base=fitz.open(next((root/'mother').glob('*.pdf')))
++for case in ['mother','normal','zero','long-18']:
++    path=next((root/case).glob('*.pdf'));doc=fitz.open(path)
++    # The unmodified checklist is six pages with this exact renderer/font environment.
++    # A changed count or different fonts requires review, not silently resetting the baseline.
++    if case!='mother':
++        assert len(doc)>=6
++        for i in range(6):assert doc[i].get_pixmap(alpha=False).samples==base[i].get_pixmap(alpha=False).samples,(case,i+1,'CHECKLIST_PIXEL_CHANGED')
++    text=''.join(''.join(p.get_text().split()) for p in list(doc)[6:]);counts=[]
++    if case!='mother':
++        data=json.loads((ROOT/'samples/final-r3'/case/'input.json').read_text())
++        expected=Counter(''.join(f['description'].split()) for f in data['findings'])
++        for value,count in expected.items():
++            actual=text.count(value);counts.append({'expected':count,'actual':actual,'description_sha256':hashlib.sha256(value.encode()).hexdigest()})
++            assert actual==count,(case,'CLIPPED_OR_MISSING_FINDING',actual,count)
++        assert text.count('；')==len(data['findings']), (case,'TERMINATOR_COUNT')
++        assert 'XXXXX' not in text and '沒有提交通風系統風量計算書及空調系統負荷計算書；' not in text,(case,'EXAMPLE_LEAK')
++    results.append({'case':case,'pages':len(doc),'report_pages':len(doc)-6,'full_problem_text_counts':counts,'status':'PASS_RENDERED_TEXT_REGRESSION'})
++Path(a.output).write_text(json.dumps({'engine':'LibreOffice Calc PDF + PyMuPDF','status':'PASS','scope':'rendered-content regression; visual/print signoff remains provisional','results':results},ensure_ascii=False,indent=2)+'\n')
++print(json.dumps(results,ensure_ascii=False))

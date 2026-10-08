@@ -1,0 +1,20 @@
+{
+  "changed_original_files": [
+    {
+      "path": "development/offline/lib/delivery.mjs",
+      "before_sha256": "6a4bd135629c7ab5a96e0fb405d8c74cfe457dfa1149176a02f3a2958c141053",
+      "after_sha256": "a51d3ed1c7180e910eee46c3cfc952887bc224731358bb5eaceca8421c2f86da",
+      "before_bytes": 10251,
+      "after_bytes": 11992
+    },
+    {
+      "path": "development/offline/lib/qc-ledger.mjs",
+      "before_sha256": "c73e7a6e9dd75d52e4171b473566e93931e9eaa70054b2a2f34929a37dbddc74",
+      "after_sha256": "e22156892887316c8235ac9819e10ff27a38286dc095927071219af33f40875b",
+      "before_bytes": 2953,
+      "after_bytes": 3518
+    }
+  ],
+  "new_test_file": "development/offline/test/delivery-recovery.test.mjs",
+  "unchanged_original_files": 89
+}

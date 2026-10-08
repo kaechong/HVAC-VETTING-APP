@@ -1,0 +1,45 @@
+REPRO historical replay: QC_HISTORY_RESET fixture: /workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/test-output/delivery-recovery-sO19vC
+✖ historical replay: deliver A, genuinely revise Finding and deliver B, exact A remains idempotent (668.454902ms)
+REPRO unrelated job after ENOSPC: ENOENT fixture: /workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/test-output/delivery-recovery-j9UYgY
+✖ initialization failure: retained evidence does not block an unrelated event or exact retry (51.481668ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1409.502707
+
+✖ failing tests:
+
+test at test/delivery-recovery.test.mjs:46:1
+✖ historical replay: deliver A, genuinely revise Finding and deliver B, exact A remains idempotent (668.454902ms)
+  Error: QC_HISTORY_RESET
+      at ensure (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/common.mjs:7:25)
+      at locked (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/qc-ledger.mjs:30:5)
+      at async deliverOffline (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/delivery.mjs:94:5)
+      at async TestContext.<anonymous> (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/test/delivery-recovery.test.mjs:56:15)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'QC_HISTORY_RESET'
+  }
+
+test at test/delivery-recovery.test.mjs:64:1
+✖ initialization failure: retained evidence does not block an unrelated event or exact retry (51.481668ms)
+  Error: ENOENT: no such file or directory, lstat '/workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/test-output/delivery-recovery-j9UYgY/store/jobs/1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372/journal.json'
+      at async lstat (node:internal/fs/promises:1086:18)
+      at async regularRead (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/delivery.mjs:12:16)
+      at async jsonRead (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/delivery.mjs:16:28)
+      at async loadJobs (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/delivery.mjs:63:17)
+      at async deliverOffline (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/lib/delivery.mjs:91:18)
+      at async TestContext.<anonymous> (file:///workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/test/delivery-recovery.test.mjs:71:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'lstat',
+    path: '/workspace/hvac-vetting-deliveryfix-h12ua0yl/baseline-reproduction-check/hvac-vetting-offline/development/offline/test-output/delivery-recovery-j9UYgY/store/jobs/1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372/journal.json'
+  }
+
+Observed test process exit code: 1

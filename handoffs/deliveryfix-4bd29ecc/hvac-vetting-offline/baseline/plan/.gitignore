@@ -1,0 +1,33 @@
+# Secrets and authentication
+.env
+.env.*
+!.env.example
+*credentials*.json
+*token*.json
+*.pem
+*.key
+*.p12
+*.pfx
+.secrets/
+.vault/
+# Customer input / output data must stay outside Git
+private/
+customer_data/
+raw_cases/
+input_drawings/
+output_reports/
+uploads/
+logs/
+*.log
+# Future build / cache artifacts
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+coverage/
+dist/
+build/
+.DS_Store
+Thumbs.db

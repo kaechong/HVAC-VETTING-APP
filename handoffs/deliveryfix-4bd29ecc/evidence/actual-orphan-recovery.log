@@ -1,0 +1,32 @@
+{
+  "scope": "Recovery from a copy of the actual before-fix ENOSPC orphan, not an emulated legacy layout",
+  "status": "PASS",
+  "original_reproduction_untouched": true,
+  "retained_evidence": [
+    {
+      "name": ".write-3c3e75a7-0226-4b43-b166-797bbfae6400.tmp",
+      "bytes": 697,
+      "sha256": "17e8bea2463b1c72dd1edf181992ac5b72a5fe5e6660bbfe0aeae13095b0e889"
+    },
+    {
+      "name": "gate.json",
+      "bytes": 4873,
+      "sha256": "4a56649852fa113da5716cde98a6e6bb7b43688268408b6dbfddf4fae17a5def"
+    },
+    {
+      "name": "input.json",
+      "bytes": 16851,
+      "sha256": "786e4b8dfbf1499db798fb1db1ff82ff45f6a8a0e677f00b1039ecbbf08ac400"
+    }
+  ],
+  "unrelated_version": "1.0",
+  "retry_version": "2.0",
+  "replay_same_path": true,
+  "replay_same_hash": true,
+  "jobs": 2,
+  "report_hashes": {
+    "unrelated": "ee330208f9dcdfa2b3bd466365eb455e38461931f67517d41493a3ddba8e7534",
+    "retry": "f0ef8391a0b32cc3e10ff251f4eba69eb5b0596332f8f0d6135afd5f1d37b022"
+  },
+  "retained_directory": "/workspace/hvac-vetting-deliveryfix-h12ua0yl/recovery-of-actual-baseline-orphan/store/incomplete-initializations/legacy-1d8ea7fdf8ca21face3cc59d08e6a29c649d9469be2740ae2d15033a81d8f372-865264f4-ffb2-4d9f-8b27-f7055df0cfd2"
+}
